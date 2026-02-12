@@ -75,3 +75,34 @@ if (contactForm) {
 
 // Dynamic Year
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Statistics Counter Animation
+const statsSection = document.querySelector('.stats-row');
+const counters = document.querySelectorAll('.stat-number[data-target]');
+let started = false;
+
+const startCounter = (el) => {
+    const target = +el.getAttribute('data-target');
+    const count = +el.innerText;
+    const speed = target / 100;
+
+    if (count < target) {
+        el.innerText = Math.ceil(count + speed);
+        setTimeout(() => startCounter(el), 20);
+    } else {
+        el.innerText = target;
+    }
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+            counters.forEach(counter => startCounter(counter));
+            started = true;
+        }
+    });
+}, { threshold: 0.5 });
+
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
