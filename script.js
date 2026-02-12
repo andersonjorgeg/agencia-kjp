@@ -48,7 +48,7 @@ if (contactForm) {
         e.preventDefault();
         const btn = contactForm.querySelector('.submit-btn');
         const originalText = btn.textContent;
-        
+
         btn.textContent = 'Enviando...';
         btn.disabled = true;
 
@@ -67,3 +67,6 @@ if (contactForm) {
         }, 1500);
     });
 }
+
+// Dynamic Year
+document.getElementById('current-year').textContent = new Date().getFullYear();
