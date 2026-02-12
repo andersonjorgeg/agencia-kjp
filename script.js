@@ -1,3 +1,8 @@
+// Initial Page Load Animations
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
