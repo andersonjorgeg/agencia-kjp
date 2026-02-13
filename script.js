@@ -1,5 +1,11 @@
-// Initial Page Load Animations
+// Initial Page Load Animations & Scroll Fix
 window.addEventListener('load', () => {
+    // Force scroll to top on refresh/load
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    
     document.body.classList.add('loaded');
 });
 
