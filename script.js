@@ -126,6 +126,24 @@ if (contactForm) {
     });
 }
 
+// Máscara de Telefone (Formato: (21)981179936)
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+        if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
+
+        let masked = '';
+        if (value.length > 0) {
+            masked = '(' + value.slice(0, 2);
+            if (value.length > 2) {
+                masked += ')' + value.slice(2);
+            }
+        }
+        e.target.value = masked;
+    });
+}
+
 // Dynamic Year
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
