@@ -61,8 +61,70 @@ const sanitizeInput = (str) => {
 };
 
 const contactForm = document.getElementById('contact-form');
-// Nota: O envio agora é feito de forma nativa pelo HTML (sem AJAX) para simplicidade,
-// conforme as últimas instruções. O FormSubmit lidará com o processamento.
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const btn = contactForm.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+        const formData = new FormData(contactForm);
+
+        // Sanitize and prepare data
+        const data = {};
+        formData.forEach((value, key) => {
+            if (key.startsWith('_')) {
+                data[key] = value;
+            } else {
+                data[key] = sanitizeInput(value);
+            }
+        });
+
+        // Feedback visual imediato
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                btn.textContent = 'Mensagem Enviada!';
+                btn.style.backgroundColor = '#4caf50';
+                btn.style.color = '#fff';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                    btn.disabled = false;
+                }, 5000);
+            } else {
+                throw new Error(result.message || 'Erro ao enviar');
+            }
+        } catch (error) {
+            console.error('Submit error:', error);
+            btn.textContent = 'Erro ao enviar';
+            btn.style.backgroundColor = '#f44336';
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.disabled = false;
+            }, 5000);
+
+            alert('Erro ao enviar. Por favor, tente novamente ou use o contato direto.');
+        }
+    });
+}
 
 // Dynamic Year
 document.getElementById('current-year').textContent = new Date().getFullYear();
