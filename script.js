@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-    
+
     document.body.classList.add('loaded');
 });
 
@@ -85,25 +85,37 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
 // Statistics Counter Animation
 const statsSection = document.querySelector('.stats-row');
 const counters = document.querySelectorAll('.stat-number[data-target]');
-let started = false;
+const COUNTER_DURATION = 500;
 
-const startCounter = (el) => {
+const animateCounter = (el) => {
     const target = +el.getAttribute('data-target');
-    const count = +el.innerText;
-    const speed = target / 100;
+    const startTime = performance.now();
 
-    if (count < target) {
-        el.innerText = Math.ceil(count + speed);
-        setTimeout(() => startCounter(el), 20);
-    } else {
-        el.innerText = target;
-    }
+    const update = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / COUNTER_DURATION, 1);
+
+        // Easing function for smoother finish
+        const easeOutQuad = (t) => t * (2 - t);
+        const currentCount = Math.floor(easeOutQuad(progress) * target);
+
+        el.innerText = currentCount;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            el.innerText = target;
+        }
+    };
+
+    requestAnimationFrame(update);
 };
 
+let started = false;
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !started) {
-            counters.forEach(counter => startCounter(counter));
+            counters.forEach(counter => animateCounter(counter));
             started = true;
         }
     });
