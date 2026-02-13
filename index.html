@@ -207,35 +207,43 @@
                             <p class="subtitle">Pronto para elevar seu projeto ao próximo nível?</p>
                         </div>
 
-                        <form id="contact-form" class="glass-form">
+                        <form id="contact-form" class="glass-form"
+                            action="https://formsubmit.co/anderson.jorge33@gmail.com" method="POST">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="Novo Contato - Agência KJP">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label for="name">Nome Completo</label>
-                                        <input type="text" id="name" placeholder="Como devemos te chamar?" required>
+                                        <input type="text" id="name" name="name" placeholder="Ex: Maria Silva" required
+                                            autocomplete="name" minlength="3">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label for="email">E-mail</label>
-                                        <input type="email" id="email" placeholder="seu@email.com" required>
+                                        <input type="email" id="email" name="email" placeholder="seu@email.com" required
+                                            autocomplete="email">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="phone">Telefone / WhatsApp</label>
-                                        <input type="tel" id="phone" placeholder="(00) 0 0000-0000">
+                                        <input type="tel" id="phone" name="phone" placeholder="(00) 0 0000-0000"
+                                            autocomplete="tel">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="message">Mensagem</label>
-                                        <textarea id="message" rows="5"
+                                        <textarea id="message" name="message" rows="5" required
                                             placeholder="Conte-nos sobre seu projeto ou ideia..."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                                    <button type="submit" class="submit-btn">Começar meu Projeto</button>
                                 </div>
                             </div>
                         </form>

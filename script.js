@@ -52,30 +52,78 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// Form Submission (Simulated)
+// --- Form Optimization & Security (Form CRO) ---
+
+// Pure function for sanitization (Removes HTML tags and trims)
+const sanitizeInput = (str) => {
+    if (!str) return '';
+    return str.replace(/<[^>]*>?/gm, '').trim();
+};
+
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
         const btn = contactForm.querySelector('.submit-btn');
         const originalText = btn.textContent;
+        const formData = new FormData(contactForm);
 
+        // Sanitize and prepare data
+        const data = {};
+        formData.forEach((value, key) => {
+            // Only sanitize text fields, keep hidden configs as is if they start with _
+            if (key.startsWith('_')) {
+                data[key] = value;
+            } else {
+                data[key] = sanitizeInput(value);
+            }
+        });
+
+        // Feedback visual
         btn.textContent = 'Enviando...';
         btn.disabled = true;
 
-        setTimeout(() => {
-            btn.textContent = 'Mensagem Enviada!';
-            btn.style.backgroundColor = '#4caf50';
-            btn.style.color = '#fff';
-            contactForm.reset();
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success === "true") {
+                btn.textContent = 'Mensagem Enviada!';
+                btn.style.backgroundColor = '#4caf50';
+                btn.style.color = '#fff';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                    btn.disabled = false;
+                }, 5000);
+            } else {
+                throw new Error(result.message || 'Erro no servidor');
+            }
+        } catch (error) {
+            console.error('Submit error:', error);
+            btn.textContent = 'Erro ao enviar';
+            btn.style.backgroundColor = '#f44336';
 
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '';
-                btn.style.color = '';
                 btn.disabled = false;
-            }, 3000);
-        }, 1500);
+            }, 5000);
+
+            alert('Erro ao enviar: ' + error.message + '\nPor favor, verifique se você já confirmou seu e-mail no FormSubmit após o primeiro envio.');
+        }
     });
 }
 
