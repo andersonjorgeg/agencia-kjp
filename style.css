@@ -543,12 +543,20 @@ ul {
     font-weight: 700;
 }
 
-.card-info p {
-    color: var(--text-gray);
+.card-info .role {
+    color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.member-bio {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .team-card:hover h3 {
