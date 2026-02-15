@@ -1,166 +1,79 @@
-// Initial Page Load Animations & Scroll Fix
+// Initial Page Load Animations & Scroll Restoration
 window.addEventListener('load', () => {
-    // Force scroll to top on refresh/load
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-
     document.body.classList.add('loaded');
 });
 
-// Navbar Scroll Effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Mobile Menu Toggle Logic
+// Mobile Menu Toggle Logic with Smooth Transitions
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const mobileMenuClose = document.getElementById('mobile-menu-close');
 const mobileMenu = document.getElementById('mobile-menu');
 
+const openMenu = () => {
+    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+    mobileMenu.classList.add('opacity-100', 'translate-x-0');
+    document.body.style.overflow = 'hidden';
+};
+
+const closeMenu = () => {
+    mobileMenu.classList.remove('opacity-100', 'translate-x-0');
+    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+    document.body.style.overflow = '';
+};
+
 if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-    });
+    mobileMenuToggle.addEventListener('click', openMenu);
 }
 
 if (mobileMenuClose && mobileMenu) {
-    mobileMenuClose.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
-    });
+    mobileMenuClose.addEventListener('click', closeMenu);
 }
 
 // Close mobile menu on link click
 const mobileMenuLinks = mobileMenu?.querySelectorAll('a, button');
 mobileMenuLinks?.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
 });
 
-// Reveal Animations (Intersection Observer)
+// Premium Reveal Animations (Intersection Observer)
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            // Once revealed, we can unobserve if we want it to stay permanent
+            // revealObserver.unobserve(entry.target);
+        } else {
+            // Optional: remove class when out of view for re-animation
+            // entry.target.classList.remove('active');
         }
     });
 }, {
-    threshold: 0.1
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 });
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// --- Form Optimization & Security (Form CRO) ---
+// Sutil Parallax Effect for Backgrounds
+window.addEventListener('scroll', () => {
+    const parallaxBgs = document.querySelectorAll('.parallax-bg');
+    const scrolled = window.pageYOffset;
 
-// Pure function for sanitization (Removes HTML tags and trims)
-const sanitizeInput = (str) => {
-    if (!str) return '';
-    return str.replace(/<[^>]*>?/gm, '').trim();
-};
-
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const btn = contactForm.querySelector('.submit-btn');
-        const originalText = btn.textContent;
-        const formData = new FormData(contactForm);
-
-        // Sanitize and prepare data
-        const data = {};
-        formData.forEach((value, key) => {
-            if (key.startsWith('_')) {
-                data[key] = value;
-            } else {
-                data[key] = sanitizeInput(value);
-            }
-        });
-
-        // Feedback visual imediato
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
-
-        try {
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                btn.textContent = 'Mensagem Enviada!';
-                btn.style.backgroundColor = '#4caf50';
-                btn.style.color = '#fff';
-                contactForm.reset();
-
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.color = '';
-                    btn.disabled = false;
-                }, 5000);
-            } else {
-                throw new Error(result.message || 'Erro ao enviar');
-            }
-        } catch (error) {
-            console.error('Submit error:', error);
-            btn.textContent = 'Erro ao enviar';
-            btn.style.backgroundColor = '#f44336';
-
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = '';
-                btn.disabled = false;
-            }, 5000);
-
-            alert('Erro ao enviar. Por favor, tente novamente ou use o contato direto.');
-        }
+    parallaxBgs.forEach(bg => {
+        const coords = scrolled * 0.4 + 'px';
+        bg.style.transform = `translateY(${coords})`;
     });
-}
+});
 
-// Máscara de Telefone (Formato: (21)981179936)
-const phoneInput = document.getElementById('phone');
-if (phoneInput) {
-    phoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
-        if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
-
-        let masked = '';
-        if (value.length > 0) {
-            masked = '(' + value.slice(0, 2);
-            if (value.length > 2) {
-                masked += ')' + value.slice(2);
-            }
-        }
-        e.target.value = masked;
-    });
-}
-
-// Dynamic Year
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Statistics Counter Animation
-const statsSection = document.querySelector('.stats-row');
+// Statistics Counter Animation (Improved)
+const statsSection = document.querySelector('.stats-row') || document.querySelector('.reveal');
 const counters = document.querySelectorAll('.stat-number[data-target]');
-const COUNTER_DURATION = 500;
+const COUNTER_DURATION = 1500;
 
 const animateCounter = (el) => {
     const target = +el.getAttribute('data-target');
@@ -169,10 +82,8 @@ const animateCounter = (el) => {
     const update = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / COUNTER_DURATION, 1);
-
-        // Easing function for smoother finish
-        const easeOutQuad = (t) => t * (2 - t);
-        const currentCount = Math.floor(easeOutQuad(progress) * target);
+        const easeOutExpo = (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        const currentCount = Math.floor(easeOutExpo(progress) * target);
 
         el.innerText = currentCount;
 
@@ -186,12 +97,12 @@ const animateCounter = (el) => {
     requestAnimationFrame(update);
 };
 
-let started = false;
+let statsStarted = false;
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting && !started) {
+        if (entry.isIntersecting && !statsStarted) {
             counters.forEach(counter => animateCounter(counter));
-            started = true;
+            statsStarted = true;
         }
     });
 }, { threshold: 0.5 });
@@ -199,3 +110,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
+
+// Dynamic Year
+const yearEl = document.getElementById('current-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
