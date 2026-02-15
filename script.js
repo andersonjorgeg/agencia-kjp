@@ -83,11 +83,21 @@ if (heroTiltContainer) {
 // Sutil Parallax Effect for Backgrounds
 window.addEventListener('scroll', () => {
     const parallaxBgs = document.querySelectorAll('.parallax-bg');
-    const scrolled = window.pageYOffset;
 
     parallaxBgs.forEach(bg => {
-        const coords = scrolled * 0.4 + 'px';
-        bg.style.transform = `translateY(${coords})`;
+        const parent = bg.parentElement;
+        const rect = parent.getBoundingClientRect();
+
+        // Só anima se o elemento pai estiver na viewport
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Calcula o progresso do elemento cruzando a tela (-1 a 1)
+            const scrollPercent = (rect.top + rect.height / 2) / (window.innerHeight / 2) - 1;
+            const moveRange = 100; // Pixels de deslocamento total
+            const yPos = scrollPercent * moveRange;
+
+            // Adicionamos um scale para cobrir as bordas durante o movimento
+            bg.style.transform = `translateY(${-yPos}px) scale(1.2)`;
+        }
     });
 });
 
