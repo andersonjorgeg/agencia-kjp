@@ -19,21 +19,31 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.navbar-links');
+// Mobile Menu Toggle Logic
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-active');
-    const icon = menuToggle.querySelector('.material-icons');
-    icon.textContent = navLinks.classList.contains('mobile-active') ? 'close' : 'menu';
-});
+if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    });
+}
+
+if (mobileMenuClose && mobileMenu) {
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+}
 
 // Close mobile menu on link click
-document.querySelectorAll('.nav-link, .nav-btn').forEach(link => {
+const mobileMenuLinks = mobileMenu?.querySelectorAll('a, button');
+mobileMenuLinks?.forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('mobile-active');
-        menuToggle.querySelector('.material-icons').textContent = 'menu';
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
     });
 });
 
