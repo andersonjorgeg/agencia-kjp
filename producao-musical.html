@@ -119,8 +119,32 @@
             }
 
             .whatsapp-float svg {
-                width: 26px;
-                height: 26px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* --- Custom CTA Responsivo (Fix for Build Issues) --- */
+        .custom-cta-container {
+            padding: 0.5rem;
+            width: auto;
+            border-radius: 1rem;
+        }
+
+        .custom-cta-text {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .custom-cta-container {
+                padding: 1.5rem;
+                width: 90%;
+                max-width: 42rem;
+                border-radius: 1.5rem;
+            }
+
+            .custom-cta-text {
+                display: block;
             }
         }
     </style>
@@ -577,9 +601,10 @@
         </div>
     </footer>
     <!-- Final CTA -->
+    <!-- Final CTA -->
     <div
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-auto sm:w-[90%] max-w-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-2 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-between gap-4">
-        <p class="text-sm font-medium text-center sm:text-left hidden sm:block">É hora de transformar sua música em um
+        class="custom-cta-container fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between gap-4">
+        <p class="custom-cta-text text-sm font-medium text-center sm:text-left">É hora de transformar sua música em um
             projeto
             profissional.</p>
         <button onclick="window.location.href='#contato'"
