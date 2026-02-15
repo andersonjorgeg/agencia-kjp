@@ -142,6 +142,73 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+
+// Form Handling with AJAX & Sanitization
+const sanitizeInput = (str) => {
+    return str.replace(/<[^>]*>?/gm, '').trim();
+};
+
+const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerText;
+
+    // Local Validation & Sanitization
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = sanitizeInput(value);
+    });
+
+    // Feedback: Sending
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Enviando...';
+    submitBtn.style.opacity = '0.7';
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Success
+            submitBtn.innerText = 'Mensagem Enviada!';
+            submitBtn.style.backgroundColor = '#10B981'; // Green-500
+            form.reset();
+            setTimeout(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.backgroundColor = '';
+            }, 5000);
+        } else {
+            throw new Error('Erro na resposta do servidor');
+        }
+    } catch (error) {
+        console.error('Erro ao enviar formulário:', error);
+        submitBtn.innerText = 'Erro ao enviar';
+        submitBtn.style.backgroundColor = '#EF4444'; // Red-500
+        setTimeout(() => {
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.backgroundColor = '';
+        }, 5000);
+    }
+};
+
+// Bind to all forms using FormSubmit endpoint
+const forms = document.querySelectorAll('form[action*="formsubmit.co"]');
+forms.forEach(form => {
+    form.addEventListener('submit', handleFormSubmit);
+});
+
 // Dynamic Year
 const yearEl = document.getElementById('current-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

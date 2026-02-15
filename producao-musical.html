@@ -414,17 +414,24 @@
                 <p class="text-white/70 text-lg">Pronto para dar o próximo passo na sua carreira musical? Vamos
                     conversar.</p>
             </div>
-            <form class="space-y-6 bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10">
+            <form id="contact-form-musical" class="space-y-6 bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10"
+                action="https://formsubmit.co/ajax/anderson.jorge33@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Novo Contato - Produção Musical KJP">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-white/50">Nome</label>
-                        <input
+                        <input name="name" required autocomplete="name"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                             placeholder="Seu nome completo" type="text" />
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-white/50">E-mail</label>
-                        <input
+                        <input name="email" required autocomplete="email"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                             placeholder="contato@exemplo.com" type="email" />
                     </div>
@@ -432,13 +439,13 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-white/50">WhatsApp</label>
-                        <input
+                        <input name="phone" required autocomplete="tel"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                             placeholder="(00) 00000-0000" type="tel" />
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-white/50">Tipo de serviço</label>
-                        <select
+                        <select name="service"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none text-white/70">
                             <option>Produção Musical</option>
                             <option>Direção Artística</option>
@@ -448,11 +455,11 @@
                 </div>
                 <div class="space-y-2">
                     <label class="text-xs font-bold uppercase tracking-wider text-white/50">Mensagem</label>
-                    <textarea
+                    <textarea name="message" required
                         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                         placeholder="Conte-nos um pouco sobre seu projeto..." rows="4"></textarea>
                 </div>
-                <button
+                <button type="submit"
                     class="w-full bg-primary text-white py-4 rounded-xl text-lg font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/20">
                     ENVIAR MENSAGEM
                 </button>
