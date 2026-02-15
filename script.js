@@ -181,19 +181,23 @@ const handleFormSubmit = async (e) => {
             submitBtn.innerText = 'Mensagem Enviada!';
             submitBtn.style.backgroundColor = '#10B981'; // Green-500
             form.reset();
-            setTimeout(() => {
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-                submitBtn.style.backgroundColor = '';
-            }, 5000);
+        } else if (response.status === 429) {
+            // Rate Limit Error
+            throw new Error('Muitas tentativas. Aguarde um momento.');
         } else {
             throw new Error('Erro na resposta do servidor');
         }
     } catch (error) {
         console.error('Erro ao enviar formulário:', error);
-        submitBtn.innerText = 'Erro ao enviar';
-        submitBtn.style.backgroundColor = '#EF4444'; // Red-500
+
+        if (error.message.includes('Muitas tentativas')) {
+            submitBtn.innerText = 'Muitas tentativas';
+            submitBtn.style.backgroundColor = '#F59E0B'; // Amber-500
+        } else {
+            submitBtn.innerText = 'Erro ao enviar';
+            submitBtn.style.backgroundColor = '#EF4444'; // Red-500
+        }
+    } finally {
         setTimeout(() => {
             submitBtn.innerText = originalBtnText;
             submitBtn.disabled = false;
