@@ -734,6 +734,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1163,6 +1167,14 @@ video {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1195,7 +1207,23 @@ video {
   transition-duration: 700ms;
 }
 
-/* Premium Animations */
+/* Ken Burns Effect for Hero Background */
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.ken-burns {
+  animation: kenBurns 25s ease-in-out infinite alternate;
+}
+
+/* Premium Section Reveals */
 
 .reveal {
   opacity: 0;
@@ -1219,7 +1247,48 @@ video {
   transform: translateY(0);
 }
 
-/* Staggered delays for child items */
+/* Hero Impactful Reveals */
+
+.hero-reveal-title,
+    .hero-reveal-desc,
+    .hero-reveal-btns {
+  transition: all 1.4s cubic-bezier(0.2, 1, 0.3, 1);
+  filter: blur(15px);
+  transform: translateY(50px) scale(0.9);
+}
+
+.hero-reveal-title.active {
+  opacity: 1 !important;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+.hero-reveal-desc.active {
+  opacity: 1 !important;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+  transition-delay: 0.3s;
+}
+
+.hero-reveal-btns.active {
+  opacity: 1 !important;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+  transition-delay: 0.6s;
+}
+
+/* Interaction & Depth */
+
+.hero-tilt {
+  perspective: 2000px;
+  transition: transform 0.15s ease-out;
+}
+
+.parallax-bg {
+  transition: transform 0.1s ease-out;
+}
+
+/* Staggered delays for items */
 
 .reveal.active .reveal-item:nth-child(1) {
   transition-delay: 0.1s;
@@ -1231,22 +1300,6 @@ video {
 
 .reveal.active .reveal-item:nth-child(3) {
   transition-delay: 0.3s;
-}
-
-.reveal.active .reveal-item:nth-child(4) {
-  transition-delay: 0.4s;
-}
-
-.reveal.active .reveal-item:nth-child(5) {
-  transition-delay: 0.5s;
-}
-
-.reveal.active .reveal-item:nth-child(6) {
-  transition-delay: 0.6s;
-}
-
-.parallax-bg {
-  transition: transform 0.1s ease-out;
 }
 
 .hover\:scale-105:hover {

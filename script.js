@@ -5,6 +5,13 @@ window.addEventListener('load', () => {
     }
     window.scrollTo(0, 0);
     document.body.classList.add('loaded');
+
+    // Trigger Hero Animations with slight delay for impact
+    setTimeout(() => {
+        document.querySelector('.hero-reveal-title')?.classList.add('active');
+        document.querySelector('.hero-reveal-desc')?.classList.add('active');
+        document.querySelector('.hero-reveal-btns')?.classList.add('active');
+    }, 300);
 });
 
 // Mobile Menu Toggle Logic with Smooth Transitions
@@ -58,6 +65,20 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Hero Tilt Interactive Effect
+const heroTiltContainer = document.querySelector('.hero-tilt');
+if (heroTiltContainer) {
+    window.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+
+        const rotationX = ((clientY / innerHeight) - 0.5) * 10; // Max 5deg tilt
+        const rotationY = ((clientX / innerWidth) - 0.5) * -10;
+
+        heroTiltContainer.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    });
+}
 
 // Sutil Parallax Effect for Backgrounds
 window.addEventListener('scroll', () => {
