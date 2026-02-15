@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@source "../producao-musical.html";
+
+@theme {
+    --color-primary: #1E90FF;
+    --color-background-light: #f8f8f5;
+    --color-background-dark: #0F0F0F;
+    --color-neutral-dark: #1a1a1a;
+
+    --font-display: "Plus Jakarta Sans", "sans-serif";
+
+    --radius-default: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+}
