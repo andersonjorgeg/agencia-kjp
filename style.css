@@ -378,12 +378,12 @@ ul {
     /* text-7xl */
     font-weight: 800;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
     line-height: 1;
     /* leading-none */
     letter-spacing: -0.05em;
     /* tracking-tighter */
-    opacity: 0.5;
+    opacity: 1;
     text-transform: uppercase;
     margin-bottom: 16px;
     /* mb-4 */
@@ -854,4 +854,33 @@ body.loaded .hero-pane .pane-content>* {
         width: 26px;
         height: 26px;
     }
+}
+
+/* Produção Musical Page Specific Styles */
+.hero-bg-musical {
+    background-position: center 15% !important;
+}
+
+.card-img-musical {
+    height: 200px !important;
+}
+
+.img-composicao {
+    background-image: url('./img/Composicao-e-Arranjo.jpg');
+}
+
+.img-pre-producao {
+    background-image: url('./img/Pre-producao.jpg');
+}
+
+.img-gravacao {
+    background-image: url('./img/Gravacao.jpg');
+}
+
+.img-edicao {
+    background-image: url('./img/Edicao.jpg');
+}
+
+.img-mixagem {
+    background-image: url('./img/Mixagem.jpg');
 }

@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Produção Musical | KJP Produções &amp; Agência</title>
+    <title>Produção Musical | KJP PRODUTORA & AGÊNCIA</title>
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./dist/output.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
@@ -156,9 +157,9 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
-                <h2 class="text-xl font-bold tracking-tight hidden md:block">KJP Produções <span
+                <h2 class="text-xl font-bold tracking-tight hidden md:block">KJP PRODUTORA <span
                         class="text-primary">&amp;</span>
-                    Agência</h2>
+                    AGÊNCIA</h2>
             </div>
             <nav class="hidden md:flex items-center gap-8">
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="#producao">Produção</a>
@@ -184,7 +185,7 @@
             <div class="flex items-center justify-between px-4 h-20 border-b border-white/10">
                 <div class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
-                    <span class="text-xl font-bold">KJP Produções</span>
+                    <span class="text-xl font-bold">KJP PRODUTORA & AGÊNCIA</span>
                 </div>
                 <button id="mobile-menu-close" class="text-white p-2">
                     <span class="material-symbols-outlined text-3xl">close</span>
@@ -206,30 +207,20 @@
     </div>
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center ken-burns"
-            data-alt="Producer Kaua working in a professional music studio"
-            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGjWDSXedb4XmedCxQRnYa9AhLNuvGUKG-SL-chLNCHAsOjLMA6L68wUPL-XA1W3giCMjQXDlR1otT_oU5u6RZwqtqcoqns3PH929PWBjCu8ohu6JuhPOYJxlIK_3KbXgoxj-5w6kDtN4WWu4aZyK1tmrmE8RwmXQ8hEW-xiw1i58GxAODSin5qedUfd3I0mk5HEbQQyjRtS_VWO_-0NlQC_20GORTiFzpg8UbfP6GIsw7Wg00grbqPH-EqqNwwNf72CW3GA3S_g6e');">
+        <div class="absolute inset-0 bg-cover ken-burns hero-bg-musical"
+            data-alt="Estudio de produção musical profissional"
+            style="background-image: url('./img/kaua-producao.jpg');">
         </div>
         <div class="absolute inset-0 dark-smoke-overlay"></div>
         <div class="relative z-10 max-w-4xl px-6 text-center hero-tilt">
             <h1 class="text-3xl md:text-6xl font-extrabold leading-tight mb-6 hero-reveal-title opacity-0">
-                Produção musical com direção artística para artistas que buscam identidade, qualidade sonora e evolução
-                real.
+                PRODUÇÃO MUSICAL
             </h1>
-            <p class="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto hero-reveal-desc opacity-0">
-                Transformamos sua visão em realidade sonora e visual de alto nível com suporte profissional em cada
-                etapa.
+            <p class="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto hero-reveal-desc opacity-0"
+                style="font-style: italic;">
+                Uma estrutura criativa completa para artistas: produção de som, construção de imagem e orientação de
+                carreira reunidas em um só lugar para você evoluir como artista de forma profissional e viver da música.
             </p>
-            <div class="flex flex-wrap justify-center gap-4 hero-reveal-btns opacity-0">
-                <button onclick="window.location.href='#producao'"
-                    class="bg-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg font-bold hover:scale-105 transition-transform">
-                    Ver Serviços
-                </button>
-                <button
-                    class="border border-white/20 bg-white/5 backdrop-blur-sm text-white px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg font-bold hover:bg-white/10 transition-all">
-                    Meu Portfólio
-                </button>
-            </div>
         </div>
     </section>
     <!-- Produção de Áudio Section -->
@@ -241,7 +232,8 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 reveal">
             <div class="text-center mb-16">
                 <h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Serviços Profissionais</h2>
-                <h3 class="text-3xl md:text-5xl font-bold mb-6">PRODUÇÃO DE ÁUDIO</h3>
+                <h3 class="text-3xl md:text-5xl font-bold mb-3">PRODUÇÃO DE ÁUDIO</h3>
+                <p class="text-primary text-base font-semibold uppercase tracking-widest mb-6">PRODUÇÃO MUSICAL</p>
                 <p class="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
                     A produção de áudio é a base de tudo. Cada detalhe do som é pensado para valorizar a música,
                     respeitar a identidade do artista e entregar um resultado profissional, forte e coerente.
@@ -249,117 +241,65 @@
             </div>
             <!-- Services Grid (Audio) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-20">
+                <!-- Card 1: Composição e Arranjo -->
                 <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">album</span>
-                    <h4 class="text-xl font-bold mb-3">Produção Musical Completa</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Acompanhamento do projeto do início ao fim, da
-                        pré-produção à entrega final.</p>
-                </div>
-                <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">graphic_eq</span>
-                    <h4 class="text-xl font-bold mb-3">Criação de Beats Exclusivos</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Beats personalizados de acordo com o estilo e
-                        intenção emocional do artista.</p>
-                </div>
-                <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">mic_external_on</span>
-                    <h4 class="text-xl font-bold mb-3">Gravação Vocal</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Captação vocal com orientação técnica e direção
-                        para extrair o melhor desempenho.</p>
-                </div>
-                <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">tune</span>
-                    <h4 class="text-xl font-bold mb-3">Mixagem</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Equilíbrio de volumes, timbres e efeitos para uma
-                        sonoridade polida e moderna.</p>
-                </div>
-                <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">equalizer</span>
-                    <h4 class="text-xl font-bold mb-3">Masterização</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Finalização técnica para garantir qualidade sonora
-                        e volume competitivo no mercado.</p>
-                </div>
-                <div
-                    class="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item">
-                    <span
-                        class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">explore</span>
-                    <h4 class="text-xl font-bold mb-3">Direção Sonora</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Definição estratégica da estética musical para
-                        criar uma marca sonora única.</p>
-                </div>
-            </div>
-            <!-- Works Carousel (Musical) -->
-            <div class="flex items-center justify-between mb-8">
-                <h4 class="text-2xl font-bold">Trabalhos em Destaque</h4>
-                <div class="flex gap-2">
-                    <button
-                        class="size-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <button
-                        class="size-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
-                </div>
-            </div>
-            <div class="flex gap-6 overflow-x-auto hide-scrollbar pb-10">
-                <div class="min-w-[300px] group cursor-pointer">
-                    <div class="aspect-video rounded-xl bg-neutral-dark overflow-hidden mb-4 relative">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Dynamic concert lighting and energetic atmosphere"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXBw9_K6gDhA5yAVHz6wFwoGfz4VYC7jh1eDnA9IzPH3e2d_0ZP5sGzoiwEG0hE3pZuxBoiil-w5RxPW-VNQqEadg5p2dzDpOJLt6UivT3FksKKyvLAnmf_fCKf_gRtSXPK1aBBUpxpJxbkz34xYhFXSN0r8vG_Nvrxhc2h9AfF8RSyNwop5Uf94WOzlk4jFmOi1O88mwbUzPqtn0oYjS3s93gi7gyPfPMidA1BD2CAXR1FXU2_HKsipbvowrYO3w3ug4Vju0hlip7" />
-                        <div
-                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
+                    class="rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item overflow-hidden">
+                    <div
+                        class="bg-cover bg-center transition-transform duration-500 group-hover:scale-105 card-img-musical img-composicao">
                     </div>
-                    <p class="text-primary text-xs font-bold uppercase mb-1">Pop / Rock</p>
-                    <h5 class="text-lg font-bold">Produção Musical – Artista X</h5>
-                </div>
-                <div class="min-w-[300px] group cursor-pointer">
-                    <div class="aspect-video rounded-xl bg-neutral-dark overflow-hidden mb-4 relative">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Electronic music equipment and studio setup"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIaKgJARcVZJisGtFsaU3zgtWSCl_3-hhtDAi5Dimr2K4hPbweHZzP2Y2SzPF2OUgYFIgif0M-ZLpfJvSkKZaUeEYZhpof-nRwHsbjDMFKFLrMUCK5SHSxYrzRFtt3QaBLhK3PQuKwj2jjx_X0XddskGSiQ6Ji7YakuuMZbg4CYbeKkK5X_LbFpAA6EiW9BtMQt9vWpzmFtsPRioWmyoQ_Pu4k2wdm70wUnNEsAz_HozxO0iItSfCkz2J4_RV5ZLjSZru_aHLise2" />
-                        <div
-                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
+                    <div class="p-6 md:p-8">
+                        <h4 class="text-xl font-bold mb-3">Composição e Arranjo</h4>
+                        <p class="text-white/60 text-sm leading-relaxed">Criação da música (letra, melodia e harmonias)
+                            e definição de como cada instrumento entra para dar identidade à faixa.</p>
                     </div>
-                    <p class="text-primary text-xs font-bold uppercase mb-1">Electronic</p>
-                    <h5 class="text-lg font-bold">Produção Musical – Artista Y</h5>
                 </div>
-                <div class="min-w-[300px] group cursor-pointer">
-                    <div class="aspect-video rounded-xl bg-neutral-dark overflow-hidden mb-4 relative">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Vocalist recording in a modern studio"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzrt6gFffhW3eDY8C5jeL_ds7e7zFUz33uAGsySCswMVGefcU8WrnlLTz4IfdWmjvHej512ByHFOBSEoAaMyQfd6Zpf7quvNok5As5YpJP48iP3OIZBqbb82EEuNr977fkUw1BQWIHc-jyzeb3wi791i_zlSSuWwOLisoqFvWwOw68c3FJMUPp-KysNq5kZsPeOHzcpHOKxHUxwyM7kytWxx7rwTzRgW6LE0QJRqq7qkGkhfObSA306gzSQUsJ5CjpQu5HunQE36gC" />
-                        <div
-                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
+                <!-- Card 2: Pré-produção -->
+                <div
+                    class="rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item overflow-hidden">
+                    <div
+                        class="bg-cover bg-center transition-transform duration-500 group-hover:scale-105 card-img-musical img-pre-producao">
                     </div>
-                    <p class="text-primary text-xs font-bold uppercase mb-1">R&amp;B / Soul</p>
-                    <h5 class="text-lg font-bold">Produção Musical – Artista Z</h5>
+                    <div class="p-6 md:p-8">
+                        <h4 class="text-xl font-bold mb-3">Pré-produção</h4>
+                        <p class="text-white/60 text-sm leading-relaxed">Planejamento da música antes de gravar: tom,
+                            tempo, referências, ajustes de estrutura e ensaios das ideias.</p>
+                    </div>
                 </div>
-                <div class="min-w-[300px] group cursor-pointer">
-                    <div class="aspect-video rounded-xl bg-neutral-dark overflow-hidden mb-4 relative">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Bass guitar in a dark studio setting"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgwmSBAXmrMG3L7zb5NSFKiIIhtAc4u0JCJnfhzMehNw21o9l-4jLF6aL8AHTzv0D4DZKoCBMdgQiZEzXXmDyl12eQNt7labKz_arAH4jwjMVCijYGlO5P72wRoKqDHC481awLcRRczZeE9TSba2psxGM7wwckDAMNgjpLQSvha-VfkW5fqcpPsyHIliJ9mhZH4Dgyec6kVuLMCzEnBdZVr-l2_5AwXtCzeOSPgyivmHAl0GH6A01CxpSUonvCQ7ukdzrOGpnVTdL5" />
-                        <div
-                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
+                <!-- Card 3: Gravação -->
+                <div
+                    class="rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item overflow-hidden">
+                    <div
+                        class="bg-cover bg-center transition-transform duration-500 group-hover:scale-105 card-img-musical img-gravacao">
                     </div>
-                    <p class="text-primary text-xs font-bold uppercase mb-1">Indie Pop</p>
-                    <h5 class="text-lg font-bold">Produção Musical – Artista W</h5>
+                    <div class="p-6 md:p-8">
+                        <h4 class="text-xl font-bold mb-3">Gravação</h4>
+                        <p class="text-white/60 text-sm leading-relaxed">Registro profissional de vozes e instrumentos,
+                            buscando a melhor interpretação e qualidade de som.</p>
+                    </div>
+                </div>
+                <!-- Card 4: Edição -->
+                <div
+                    class="rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item overflow-hidden">
+                    <div
+                        class="bg-cover bg-center transition-transform duration-500 group-hover:scale-105 card-img-musical img-edicao">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h4 class="text-xl font-bold mb-3">Edição</h4>
+                        <p class="text-white/60 text-sm leading-relaxed">Organização e limpeza do material gravado, com
+                            correções de timing, cortes e ajustes finos quando necessário.</p>
+                    </div>
+                </div>
+                <!-- Card 5: Mixagem -->
+                <div
+                    class="rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 group reveal-item overflow-hidden">
+                    <div
+                        class="bg-cover bg-center transition-transform duration-500 group-hover:scale-105 card-img-musical img-mixagem">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h4 class="text-xl font-bold mb-3">Mixagem</h4>
+                        <p class="text-white/60 text-sm leading-relaxed">Equilíbrio de volumes, timbres e efeitos para
+                            que todos os elementos soem juntos de forma clara e impactante.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -383,128 +323,166 @@
                 </div>
                 <div class="flex-1 grid grid-cols-1 gap-4">
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">person_search</span>
-                        <span class="font-medium">Definição de Identidade Artística</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">person_search</span>
+                        <div>
+                            <span class="font-medium">Definição de Identidade Artística</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Definimos quem você é como artista: estilo,
+                                    narrativa e linguagem, alinhando som e imagem para construir uma identidade clara e
+                                    autêntica.</em></p>
+                        </div>
                     </div>
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">visibility</span>
-                        <span class="font-medium">Orientação de Imagem e Posicionamento</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">visibility</span>
+                        <div>
+                            <span class="font-medium">Orientação de Imagem e Posicionamento</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Ajustamos sua estética visual, postura e
+                                    comunicação para que sua imagem converse com o público certo e fortaleça sua
+                                    marca.</em></p>
+                        </div>
                     </div>
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">movie_edit</span>
-                        <span class="font-medium">Direção de Conteúdo Audiovisual</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">movie_edit</span>
+                        <div>
+                            <span class="font-medium">Direção de Conteúdo Audiovisual</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Orientamos a criação de vídeos e conteúdos visuais
+                                    com conceito, narrativa e estética alinhados à sua identidade artística.</em></p>
+                        </div>
                     </div>
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">share</span>
-                        <span class="font-medium">Conteúdo para Redes Sociais</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">share</span>
+                        <div>
+                            <span class="font-medium">Conteúdo para Redes Sociais</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Planejamos conteúdos estratégicos para redes
+                                    sociais, focados em engajamento, posicionamento e conexão com seu público.</em></p>
+                        </div>
                     </div>
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">palette</span>
-                        <span class="font-medium">Alinhamento Visual com o Som</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">palette</span>
+                        <div>
+                            <span class="font-medium">Alinhamento Visual com o Som</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Garantimos que a estética visual esteja em
+                                    sintonia com a sonoridade.</em></p>
+                        </div>
                     </div>
                     <div
-                        class="bg-white/5 p-6 rounded-xl flex items-center gap-4 border border-white/5 hover:border-primary/30 transition-all">
-                        <span class="material-symbols-outlined text-primary">video_camera_front</span>
-                        <span class="font-medium">Direção de Clipes</span>
+                        class="bg-white/5 p-6 rounded-xl flex items-start gap-4 border border-white/5 hover:border-primary/30 transition-all">
+                        <span class="material-symbols-outlined text-primary mt-1">video_camera_front</span>
+                        <div>
+                            <span class="font-medium">Direção de Clipes</span>
+                            <p class="text-white/50 text-sm mt-1"><em>Definimos conceito, linguagem visual e narrativa
+                                    para videoclipes que representem sua música.</em></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Visual Productions Carousel -->
+            <!-- Galeria: PRODUÇÕES E PARTICIPAÇÕES -->
+            <h4 class="text-2xl font-bold uppercase mb-6">PRODUÇÕES E PARTICIPAÇÕES</h4>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="aspect-square rounded-2xl overflow-hidden group">
                     <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                        data-alt="Artistic photography for musician identity"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY6rdkEuhBqAHf4GsUn6gQ9ca0TjxmsM9h_0WYHB73W213T_e88yEl3B8oqQWrwykAtxLK2Hd1k_uZrovEq85KwA_pkMP-cCuVcqfj-NqVgDKXJJmFBE6sPv47hVRhkSqnENy-R81vmBmRlo0kiWBSP8xOWSAshdqSQ5mLE455FYio7a2qxJDqKV6_X15U1vOfZOzvqMoraO7kmYvmtBgdIRkVNv2rqQdOT_4rMEDOFGr9nYhk8-Ga5PxYhQuoTxgNKUQL4BJ3x--7" />
+                        alt="Produção e Participação 1"
+                        src="https://drive.google.com/uc?export=view&id=1_KrhUCtBZbXcduzC-DcOV1zT-2hg9iSh" />
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden group">
                     <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                        data-alt="Vibrant artistic music video still"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0mIpUD5tZWJneefgRI6-CAvzMm8gKhRWQEwudUvkOhHtP-l-OTQqroAePaZ3u8OdFfpH3vKKIZQvHzbnP9NSFrGC9dNcDXpztgF5pQ48K8Hz7J6v_UqBrf16VrYwYUTmOMtN8vLiQGR50ZTpZBVCh9lcA8WrcSK3R8CPfGCU7X1YAI1Wsadw6PCUihI6LOtZ7IGNL7hMJ3JG1ZdCoXoIgmYzED94HwH0PThA34o-oSemahG6GSSkff-ryJXVoajKRZxNwAN4udvlz" />
+                        alt="Produção e Participação 2"
+                        src="https://drive.google.com/uc?export=view&id=1FW9erS_7BOpG42OJWyuGycO3J2O3SEjg" />
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden group">
                     <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                        data-alt="Cinematic production backstage photo"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo6903YHU-P5zefV7XmLLTmBrjVcS9b2h4uQAA9-2k9aUIV9FPRx8IjrLSjHxP0npVF9xjwzKh5F5BI_KioYxex-Ca_5-yNBvp66XHffbLAqk9nyqP0g647b8DStlm_Y4SFJKKKKxqOlKXwdcYVBlY5z8ZzyWpbMkSOs-56pC9iplWE7Zq8m2_kymxi3U1RD_U21je26Hjl2ZCURhQsfLCeZBTB22r6d0SNMQPc6mui0YbVuhwZ8K_rboph8jztXUFfcN7PkI0V8Dv" />
+                        alt="Produção e Participação 3"
+                        src="https://drive.google.com/uc?export=view&id=1mAlf9sNszv2JD1J_0sIYPvQG_RdioKsm" />
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden group">
                     <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                        data-alt="Creative session with lighting setup"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1yX8AZ76uepfzLONOE_9gAnrv-7rYN02SjK5y9DwNjbObibj0u9lmhyQgJPGog-oVRWTAKO3OE9fzw6RC887_to8LBoB60Fv0le9tTDJjFA9EYFxhmPV6vOqjczfhNffORfLnl-aiqgvuswYDj1L-qgLwpuwWmqlrd-rEtf2iQiY6rXvlTqnPiVizMnE6q93M_5JdH8nph34lD-qOtYGPuODeKHPBiJ5njuFG5yhDqvFL5nQMrZW_a43T_FjZuvuIuNFlSNdm8cXK" />
+                        alt="Produção e Participação 4"
+                        src="https://drive.google.com/uc?export=view&id=1CQGztkwhV14QxwnucR1tAc57qXyUhvaP" />
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        alt="Produção e Participação 5"
+                        src="https://drive.google.com/uc?export=view&id=1l8YDmJxWuMAftTUgZbYHV8h5BNAfHTca" />
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        alt="Produção e Participação 6"
+                        src="https://drive.google.com/uc?export=view&id=1vxLf69P2GLm0_dSOcN_x4mU1ZQOTa0MI" />
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        alt="Produção e Participação 7"
+                        src="https://drive.google.com/uc?export=view&id=1hWLoGAsjx12U0tipTEwKjf07Z_xKFH4B" />
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        alt="Produção e Participação 8"
+                        src="https://drive.google.com/uc?export=view&id=1dgCWrsf8ZHWwWwXIvIKNJRWHuwQB7_Y9" />
                 </div>
             </div>
         </div>
     </section>
     <!-- Mentoria Musical Section -->
-    <section id="mentoria" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative group">
-                    <div
-                        class="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all">
-                    </div>
-                    <div class="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                        <img class="w-full h-full object-cover"
-                            data-alt="Mentorship session between producer and artist"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB44dnDI3LSrPFL_rjQPCMmsm9IGbCabcKmxV122lEON6PRQr84lEMXpNxuH9Wnrc8wWVK1jIPQCOelPO1yGuplZMgx742lkViBDkhxwHZAxD8xskrhl9IOo815Bh8k5KB2i2uRFSPtPXt15CaKeUqstSIF5YcmD5DO-Xyn--FNf_Z41UDGiaq6-Lx_8xhMhMq94GBwXV_khvHIPDMrAC7S2ewwU1NEwSfQqbDThqT5c1HAYOj5v8EHTtTczDV_zgnCPjeKxMPiuZdI" />
-                    </div>
+    <section id="mentoria" class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20"
+            style="background-image: url('https://drive.google.com/uc?export=view&id=1wBwEUYX3nx1ZPum5QWpEp3DzCkluVFqx');">
+        </div>
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Aceleração de Carreira</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">MENTORIA MUSICAL</h3>
+                <p class="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
+                    Mentoria para artistas que querem crescer com consciência. Oferecemos o mapa e as ferramentas
+                    para você navegar na indústria da música com profissionalismo e estratégia.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">psychology</span>
+                    <h5 class="font-bold text-lg mb-2">Mentalidade Profissional</h5>
+                    <p class="text-white/50 text-sm"><em>Foco, disciplina e postura para agir como artista
+                            profissional.</em></p>
                 </div>
-                <div>
-                    <h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Aceleração de Carreira
-                    </h2>
-                    <h3 class="text-3xl md:text-5xl font-bold mb-6">MENTORIA MUSICAL</h3>
-                    <p class="text-white/70 text-lg mb-10 leading-relaxed">
-                        Mentoria para artistas que querem crescer com consciência. Oferecemos o mapa e as ferramentas
-                        para você navegar na indústria da música com profissionalismo e estratégia.
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">hub</span>
+                    <h5 class="font-bold text-lg mb-2">Networking</h5>
+                    <p class="text-white/50 text-sm"><em>Construção de conexões estratégicas dentro do mercado
+                            musical.</em></p>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">payments</span>
+                    <h5 class="font-bold text-lg mb-2">Fontes de Faturamento</h5>
+                    <p class="text-white/50 text-sm"><em>Estratégias para monetizar sua música e seu projeto
+                            artístico.</em></p>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">trending_up</span>
+                    <h5 class="font-bold text-lg mb-2">Plano de Crescimento</h5>
+                    <p class="text-white/50 text-sm"><em>Definição de metas reais, claras e escaláveis para sua
+                            carreira.</em></p>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">ads_click</span>
+                    <h5 class="font-bold text-lg mb-2">Marketing para Músicos</h5>
+                    <p class="text-white/50 text-sm"><em>Estratégias de marketing, tráfego e posicionamento
+                            pessoal.</em></p>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 hover:border-primary/50 rounded-2xl p-6 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-3 block">gps_fixed</span>
+                    <h5 class="font-bold text-lg mb-2">Posicionamento</h5>
+                    <p class="text-white/50 text-sm"><em>Clareza de identidade para se destacar em meio à multidão.</em>
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">psychology</span>
-                            <div>
-                                <h5 class="font-bold">Mentalidade Profissional</h5>
-                                <p class="text-white/50 text-sm">Foco e disciplina artística.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">hub</span>
-                            <div>
-                                <h5 class="font-bold">Networking</h5>
-                                <p class="text-white/50 text-sm">Conexões estratégicas no mercado.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">payments</span>
-                            <div>
-                                <h5 class="font-bold">Fontes de Faturamento</h5>
-                                <p class="text-white/50 text-sm">Como rentabilizar seu projeto.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">trending_up</span>
-                            <div>
-                                <h5 class="font-bold">Plano de Crescimento</h5>
-                                <p class="text-white/50 text-sm">Metas reais e escaláveis.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">ads_click</span>
-                            <div>
-                                <h5 class="font-bold">Marketing para Músicos</h5>
-                                <p class="text-white/50 text-sm">Tráfego e primarying pessoal.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-1">gps_fixed</span>
-                            <div>
-                                <h5 class="font-bold">Posicionamento</h5>
-                                <p class="text-white/50 text-sm">Destaque-se na multidão.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -579,8 +557,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
                 <div class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
-                    <h2 class="text-xl font-bold tracking-tight">KJP Produções <span class="text-primary">&amp;</span>
-                        Agência</h2>
+                    <h2 class="text-xl font-bold tracking-tight">KJP PRODUTORA <span class="text-primary">&amp;</span>
+                        AGÊNCIA</h2>
                 </div>
                 <div class="flex gap-6">
                     <a class="text-primary hover:text-white transition-colors" href="#"><span
@@ -596,7 +574,7 @@
                 </div>
             </div>
             <div class="mt-16 pt-8 border-t border-white/5 text-center text-white/30 text-sm">
-                © 2024 KJP Produções &amp; Agência. Todos os direitos reservados.
+                © 2024 KJP PRODUTORA & AGÊNCIA. Todos os direitos reservados.
             </div>
         </div>
     </footer>
@@ -615,8 +593,8 @@
 
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5521981179936?text=Olá! Gostaria de saber mais sobre os serviços da KJP."
-        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+    <a href="https://wa.me/5521968845732" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contato via WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.067 2.875 1.215 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.82 11.82 0 001.592 5.96L0 24l6.12-1.604a11.81 11.81 0 005.925 1.583h.005c6.637 0 12.046-5.412 12.049-12.05a11.82 11.82 0 00-3.48-8.513z"
