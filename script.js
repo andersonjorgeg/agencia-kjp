@@ -213,6 +213,58 @@ forms.forEach(form => {
     form.addEventListener('submit', handleFormSubmit);
 });
 
+// Image Modal Logic (Tailwind version)
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const modalClose = document.getElementById('modal-close');
+
+const openImageModal = (src) => {
+    if (!modal || !modalImg) return;
+    modalImg.src = src;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
+
+const closeImageModal = () => {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { modalImg.src = ''; }, 300);
+};
+
+// Listeners for Gallery Images
+const galleryImgs = document.querySelectorAll('section#direcao img');
+galleryImgs.forEach(img => {
+    img.addEventListener('click', () => openImageModal(img.src));
+});
+
+// Listeners for Service Cards (Background Images)
+const serviceCards = document.querySelectorAll('.card-img-musical');
+serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const style = window.getComputedStyle(card);
+        const bg = style.backgroundImage;
+        if (bg && bg !== 'none') {
+            const url = bg.slice(4, -1).replace(/"/g, "");
+            openImageModal(url);
+        }
+    });
+});
+
+if (modalClose) modalClose.addEventListener('click', closeImageModal);
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeImageModal();
+    });
+}
+
+// Global Keyboard Listeners
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeImageModal();
+    }
+});
+
 // Dynamic Year
 const yearEl = document.getElementById('current-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
