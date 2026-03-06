@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Produção Musical | KJP PRODUTORA & AGÊNCIA</title>
-    <link rel="stylesheet" href="./style.css" />
+
     <link rel="stylesheet" href="./dist/output.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
@@ -14,141 +14,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <style>
-        body {
-            font-family: "Plus Jakarta Sans", sans-serif;
-            background-color: #0F0F0F;
-            color: #FFFFFF;
-        }
-
-        .dark-smoke-overlay {
-            background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8));
-        }
-
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        [id] {
-            scroll-margin-top: 80px;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* --- WhatsApp Floating Button (Glassmorphism Premium) --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background: rgba(15, 15, 15, 0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1.5px solid rgba(30, 144, 255, 0.4);
-            border-radius: 50%;
-            color: #1E90FF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-        }
-
-        .whatsapp-float svg {
-            width: 32px;
-            height: 32px;
-            transition: transform 0.4s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-5px);
-            background: rgba(30, 144, 255, 0.1);
-            border-color: rgba(30, 144, 255, 0.8);
-            box-shadow: 0 12px 40px 0 rgba(30, 144, 255, 0.2);
-        }
-
-        .whatsapp-float:hover svg {
-            transform: scale(1.1);
-            color: #fff;
-        }
-
-        /* Tech Pulse Animation */
-        .whatsapp-float::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: rgba(30, 144, 255, 0.3);
-            z-index: -1;
-            animation: blue-pulse 2.5s infinite;
-        }
-
-        @keyframes blue-pulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
-
-            70% {
-                transform: scale(1.6);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(0.95);
-                opacity: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-            }
-
-            .whatsapp-float svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-
-        /* --- Custom CTA Responsivo (Fix for Build Issues) --- */
-        .custom-cta-container {
-            padding: 0.5rem;
-            width: auto;
-            border-radius: 1rem;
-        }
-
-        .custom-cta-text {
-            display: none;
-        }
-
-        @media (min-width: 640px) {
-            .custom-cta-container {
-                padding: 1.5rem;
-                width: 90%;
-                max-width: 42rem;
-                border-radius: 1.5rem;
-            }
-
-            .custom-cta-text {
-                display: block;
-            }
-        }
-    </style>
 </head>
 
 <body class="bg-background-dark text-white font-display">
@@ -422,10 +287,10 @@
     </section>
     <!-- Mentoria Musical Section -->
     <section id="mentoria" class="relative py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20"
-            style="background-image: url('https://drive.google.com/uc?export=view&id=1wBwEUYX3nx1ZPum5QWpEp3DzCkluVFqx');">
+        <div class="absolute inset-0 bg-cover bg-mentoria opacity-30 parallax-bg z-0"
+            data-alt="Mentoria e Aceleração de Carreira Musical"
+            style="background-image: url('./img/bg-kaua-producao.jpg');">
         </div>
-        <div class="absolute inset-0 bg-black/60"></div>
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Aceleração de Carreira</h2>

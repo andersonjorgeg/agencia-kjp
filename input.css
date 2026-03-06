@@ -2,95 +2,247 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+/* --- Custom Base Styles --- */
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+}
 
-    /* Ken Burns Effect for Hero Background */
-    @keyframes kenBurns {
-        0% {
-            transform: scale(1);
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        100% {
-            transform: scale(1.15);
-        }
+[id] {
+    scroll-margin-top: 80px;
+}
+
+/* --- Animations --- */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
     }
 
-    .ken-burns {
-        animation: kenBurns 25s ease-in-out infinite alternate;
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes blue-pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
     }
 
-    /* Premium Section Reveals */
-    .reveal {
+    70% {
+        transform: scale(1.6);
         opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
     }
 
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .reveal-item {
+    100% {
+        transform: scale(0.95);
         opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+}
+
+/* --- Layout Helpers --- */
+.dark-smoke-overlay {
+    background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8));
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- Produção Musical Page Specific --- */
+.hero-bg-musical {
+    background-position: center 15%;
+}
+
+.bg-mentoria {
+    background-position: center 15%;
+}
+
+.card-img-musical {
+    height: 200px;
+}
+
+.img-composicao {
+    background-image: url('../img/Composicao-e-Arranjo.jpg');
+}
+
+.img-pre-producao {
+    background-image: url('../img/Pre-producao.jpg');
+}
+
+.img-gravacao {
+    background-image: url('../img/Gravacao.jpg');
+}
+
+.img-edicao {
+    background-image: url('../img/Edicao.jpg');
+}
+
+.img-mixagem {
+    background-image: url('../img/Mixagem.jpg');
+}
+
+/* --- Image Modal --- */
+.modal-overlay {
+    @apply fixed inset-0 bg-black/90 backdrop-blur-md z-[9999] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-5;
+}
+
+.modal-overlay.active {
+    @apply opacity-100 pointer-events-auto;
+}
+
+.modal-container {
+    @apply relative max-w-[95vw] w-[90%] flex items-center justify-center;
+}
+
+.modal-image {
+    @apply max-w-full max-h-[80vh] rounded-xl border border-white/10 object-contain;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(30, 144, 255, 0.2);
+}
+
+.modal-close-btn {
+    @apply absolute -top-5 -right-5 w-10 h-10 bg-[#1E90FF] text-white rounded-full flex items-center justify-center z-[10001] shadow-lg transition-transform hover:scale-110 md:-top-5 md:-right-5;
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-float {
+    @apply fixed bottom-[30px] right-[30px] w-[65px] h-[65px] bg-[#0F0F0F]/60 backdrop-blur-[15px] border-[1.5px] border-primary/40 rounded-full text-primary flex items-center justify-center no-underline z-[1000] transition-all;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-float svg {
+    @apply w-8 h-8 transition-transform;
+    transition-duration: 400ms;
+}
+
+.whatsapp-float:hover {
+    @apply scale-110 -translate-y-[5px] bg-primary/10 border-primary/80;
+    box-shadow: 0 12px 40px 0 rgba(30, 144, 255, 0.2);
+}
+
+.whatsapp-float:hover svg {
+    @apply scale-110 text-white;
+}
+
+.whatsapp-float::before {
+    @apply content-[''] absolute w-full h-full rounded-full bg-primary/30 -z-10;
+    animation: blue-pulse 2.5s infinite;
+}
+
+/* --- Custom CTA Responsivo --- */
+.custom-cta-container {
+    @apply p-2 w-auto rounded-2xl;
+}
+
+.custom-cta-text {
+    @apply hidden;
+}
+
+@media (min-width: 640px) {
+    .custom-cta-container {
+        @apply p-6 w-[90%] max-w-[42rem];
+        border-radius: 1.5rem;
     }
 
-    .reveal.active .reveal-item {
-        opacity: 1;
-        transform: translateY(0);
+    .custom-cta-text {
+        @apply block;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        @apply bottom-5 right-5 w-[55px] h-[55px];
     }
 
-    /* Hero Impactful Reveals */
-    .hero-reveal-title,
-    .hero-reveal-desc,
-    .hero-reveal-btns {
-        transition: all 1.4s cubic-bezier(0.2, 1, 0.3, 1);
-        filter: blur(15px);
-        transform: translateY(50px) scale(0.9);
+    .whatsapp-float svg {
+        @apply w-6 h-6;
     }
+}
 
-    .hero-reveal-title.active {
-        opacity: 1 !important;
-        filter: blur(0);
-        transform: translateY(0) scale(1);
-    }
+/* --- Utilities & Effects --- */
+.ken-burns {
+    animation: kenBurns 25s ease-in-out infinite alternate;
+}
 
-    .hero-reveal-desc.active {
-        opacity: 1 !important;
-        filter: blur(0);
-        transform: translateY(0) scale(1);
-        transition-delay: 0.3s;
-    }
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
 
-    .hero-reveal-btns.active {
-        opacity: 1 !important;
-        filter: blur(0);
-        transform: translateY(0) scale(1);
-        transition-delay: 0.6s;
-    }
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    /* Interaction & Depth */
-    .hero-tilt {
-        perspective: 2000px;
-        transition: transform 0.15s ease-out;
-    }
+.reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
 
-    .parallax-bg {
-        transition: transform 0.1s ease-out;
-    }
+.reveal.active .reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    /* Staggered delays for items */
-    .reveal.active .reveal-item:nth-child(1) {
-        transition-delay: 0.1s;
-    }
+.hero-reveal-title,
+.hero-reveal-desc,
+.hero-reveal-btns {
+    transition: all 1.4s cubic-bezier(0.2, 1, 0.3, 1);
+    filter: blur(15px);
+    transform: translateY(50px) scale(0.9);
+}
 
-    .reveal.active .reveal-item:nth-child(2) {
-        transition-delay: 0.2s;
-    }
+.hero-reveal-title.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+}
 
-    .reveal.active .reveal-item:nth-child(3) {
-        transition-delay: 0.3s;
-    }
+.hero-reveal-desc.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    transition-delay: 0.3s;
+}
+
+.hero-reveal-btns.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    transition-delay: 0.6s;
+}
+
+.hero-tilt {
+    perspective: 2000px;
+    transition: transform 0.15s ease-out;
+}
+
+.parallax-bg {
+    transition: transform 0.1s ease-out;
+}
+
+.reveal.active .reveal-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.reveal.active .reveal-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.reveal.active .reveal-item:nth-child(3) {
+    transition-delay: 0.3s;
 }

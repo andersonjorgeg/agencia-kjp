@@ -1,0 +1,335 @@
+
+Rebuilding...
+CssSyntaxError: tailwindcss: C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\input.css:54:9: The `shadow-[0_20px_50px_rgba(0,` class does not exist. If `shadow-[0_20px_50px_rgba(0,` is a custom class, make sure it is defined within a `@layer` directive.
+    at Input.error (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\postcss\lib\input.js:135:16)
+    at AtRule.error (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\postcss\lib\node.js:146:32)
+    at processApply (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+    at C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+    at C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+    at async Object.Once (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\tailwindcss\lib\cli\build\plugin.js:248:17)
+    at async LazyResult.runAsync (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\postcss\lib\lazy-result.js:293:11)
+    at async build (C:\Users\testf\OneDrive\Documentos\landingPage\site-kjp\node_modules\tailwindcss\lib\cli\build\index.js:49:9) {
+  reason: 'The `shadow-[0_20px_50px_rgba(0,` class does not exist. If `shadow-[0_20px_50px_rgba(0,` is a custom class, make sure it is defined within a `@layer` directive.',
+  file: 'C:\\Users\\testf\\OneDrive\\Documentos\\landingPage\\site-kjp\\input.css',
+  source: '@tailwind base;\r\n' +
+    '@tailwind components;\r\n' +
+    '@tailwind utilities;\r\n' +
+    '\r\n' +
+    '@layer components {\r\n' +
+    '\r\n' +
+    '    /* Produ├º├úo Musical Page Specific Styles */\r\n' +
+    '    .hero-bg-musical {\r\n' +
+    '        background-position: center 15% !important;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .bg-mentoria {\r\n' +
+    '        background-position: center 15% !important;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .card-img-musical {\r\n' +
+    '        height: 200px !important;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .img-composicao {\r\n' +
+    "        background-image: url('./img/Composicao-e-Arranjo.jpg');\r\n" +
+    '    }\r\n' +
+    '\r\n' +
+    '    .img-pre-producao {\r\n' +
+    "        background-image: url('./img/Pre-producao.jpg');\r\n" +
+    '    }\r\n' +
+    '\r\n' +
+    '    .img-gravacao {\r\n' +
+    "        background-image: url('./img/Gravacao.jpg');\r\n" +
+    '    }\r\n' +
+    '\r\n' +
+    '    .img-edicao {\r\n' +
+    "        background-image: url('./img/Edicao.jpg');\r\n" +
+    '    }\r\n' +
+    '\r\n' +
+    '    .img-mixagem {\r\n' +
+    "        background-image: url('./img/Mixagem.jpg');\r\n" +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* --- Image Modal (CSS Puro dentro do Tailwind) --- */\r\n' +
+    '    .modal-overlay {\r\n' +
+    '        @apply fixed inset-0 bg-black/90 backdrop-blur-md z-[9999] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-5;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .modal-overlay.active {\r\n' +
+    '        @apply opacity-100 pointer-events-auto;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .modal-container {\r\n' +
+    '        @apply relative max-w-[95vw] w-[90%] flex items-center justify-center;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .modal-image {\r\n' +
+    '        @apply max-w-full max-h-[80vh] rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0, 0, 0, 0.5), 0_0_30px_rgba(30, 144, 255, 0.2)];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .modal-close-btn {\r\n' +
+    '        @apply absolute -top-5 -right-5 w-10 h-10 bg-[#1E90FF] text-white rounded-full flex items-center justify-center z-[10001] shadow-lg transition-transform hover:scale-110 md:-top-5 md:-right-5;\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '@layer utilities {\r\n' +
+    '\r\n' +
+    '    /* Ken Burns Effect for Hero Background */\r\n' +
+    '    @keyframes kenBurns {\r\n' +
+    '        0% {\r\n' +
+    '            transform: scale(1);\r\n' +
+    '        }\r\n' +
+    '\r\n' +
+    '        100% {\r\n' +
+    '            transform: scale(1.15);\r\n' +
+    '        }\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .ken-burns {\r\n' +
+    '        animation: kenBurns 25s ease-in-out infinite alternate;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Premium Section Reveals */\r\n' +
+    '    .reveal {\r\n' +
+    '        opacity: 0;\r\n' +
+    '        transform: translateY(30px);\r\n' +
+    '        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .reveal.active {\r\n' +
+    '        opacity: 1;\r\n' +
+    '        transform: translateY(0);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .reveal-item {\r\n' +
+    '        opacity: 0;\r\n' +
+    '        transform: translateY(20px);\r\n' +
+    '        transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .reveal.active .reveal-item {\r\n' +
+    '        opacity: 1;\r\n' +
+    '        transform: translateY(0);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Hero Impactful Reveals */\r\n' +
+    '    .hero-reveal-title,\r\n' +
+    '    .hero-reveal-desc,\r\n' +
+    '    .hero-reveal-btns {\r\n' +
+    '        transition: all 1.4s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+    '        filter: blur(15px);\r\n' +
+    '        transform: translateY(50px) scale(0.9);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-reveal-title.active {\r\n' +
+    '        opacity: 1 !important;\r\n' +
+    '        filter: blur(0);\r\n' +
+    '        transform: translateY(0) scale(1);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-reveal-desc.active {\r\n' +
+    '        opacity: 1 !important;\r\n' +
+    '        filter: blur(0);\r\n' +
+    '        transform: translateY(0) scale(1);\r\n' +
+    '        transition-delay: 0.3s;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-reveal-btns.active {\r\n' +
+    '        opacity: 1 !important;\r\n' +
+    '        filter: blur(0);\r\n' +
+    '        transform: translateY(0) scale(1);\r\n' +
+    '        transition-delay: 0.6s;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Interaction & Depth */\r\n' +
+    '    .hero-tilt {\r\n' +
+    '        perspective: 2000px;\r\n' +
+    '        transition: transform 0.15s ease-out;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .parallax-bg {\r\n' +
+    '        transition: transform 0.1s ease-out;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Staggered delays for items */\r\n' +
+    '    .reveal.active .reveal-item:nth-child(1) {\r\n' +
+    '        transition-delay: 0.1s;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .reveal.active .reveal-item:nth-child(2) {\r\n' +
+    '        transition-delay: 0.2s;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .reveal.active .reveal-item:nth-child(3) {\r\n' +
+    '        transition-delay: 0.3s;\r\n' +
+    '    }\r\n' +
+    '}',
+  line: 54,
+  column: 9,
+  endLine: 54,
+  endColumn: 163,
+  input: {
+    column: 9,
+    endColumn: 163,
+    endLine: 54,
+    endOffset: 1451,
+    line: 54,
+    offset: 1297,
+    source: '@tailwind base;\r\n' +
+      '@tailwind components;\r\n' +
+      '@tailwind utilities;\r\n' +
+      '\r\n' +
+      '@layer components {\r\n' +
+      '\r\n' +
+      '    /* Produ├º├úo Musical Page Specific Styles */\r\n' +
+      '    .hero-bg-musical {\r\n' +
+      '        background-position: center 15% !important;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .bg-mentoria {\r\n' +
+      '        background-position: center 15% !important;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .card-img-musical {\r\n' +
+      '        height: 200px !important;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .img-composicao {\r\n' +
+      "        background-image: url('./img/Composicao-e-Arranjo.jpg');\r\n" +
+      '    }\r\n' +
+      '\r\n' +
+      '    .img-pre-producao {\r\n' +
+      "        background-image: url('./img/Pre-producao.jpg');\r\n" +
+      '    }\r\n' +
+      '\r\n' +
+      '    .img-gravacao {\r\n' +
+      "        background-image: url('./img/Gravacao.jpg');\r\n" +
+      '    }\r\n' +
+      '\r\n' +
+      '    .img-edicao {\r\n' +
+      "        background-image: url('./img/Edicao.jpg');\r\n" +
+      '    }\r\n' +
+      '\r\n' +
+      '    .img-mixagem {\r\n' +
+      "        background-image: url('./img/Mixagem.jpg');\r\n" +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* --- Image Modal (CSS Puro dentro do Tailwind) --- */\r\n' +
+      '    .modal-overlay {\r\n' +
+      '        @apply fixed inset-0 bg-black/90 backdrop-blur-md z-[9999] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-5;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .modal-overlay.active {\r\n' +
+      '        @apply opacity-100 pointer-events-auto;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .modal-container {\r\n' +
+      '        @apply relative max-w-[95vw] w-[90%] flex items-center justify-center;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .modal-image {\r\n' +
+      '        @apply max-w-full max-h-[80vh] rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0, 0, 0, 0.5), 0_0_30px_rgba(30, 144, 255, 0.2)];\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .modal-close-btn {\r\n' +
+      '        @apply absolute -top-5 -right-5 w-10 h-10 bg-[#1E90FF] text-white rounded-full flex items-center justify-center z-[10001] shadow-lg transition-transform hover:scale-110 md:-top-5 md:-right-5;\r\n' +
+      '    }\r\n' +
+      '}\r\n' +
+      '\r\n' +
+      '@layer utilities {\r\n' +
+      '\r\n' +
+      '    /* Ken Burns Effect for Hero Background */\r\n' +
+      '    @keyframes kenBurns {\r\n' +
+      '        0% {\r\n' +
+      '            transform: scale(1);\r\n' +
+      '        }\r\n' +
+      '\r\n' +
+      '        100% {\r\n' +
+      '            transform: scale(1.15);\r\n' +
+      '        }\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .ken-burns {\r\n' +
+      '        animation: kenBurns 25s ease-in-out infinite alternate;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Premium Section Reveals */\r\n' +
+      '    .reveal {\r\n' +
+      '        opacity: 0;\r\n' +
+      '        transform: translateY(30px);\r\n' +
+      '        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .reveal.active {\r\n' +
+      '        opacity: 1;\r\n' +
+      '        transform: translateY(0);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .reveal-item {\r\n' +
+      '        opacity: 0;\r\n' +
+      '        transform: translateY(20px);\r\n' +
+      '        transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .reveal.active .reveal-item {\r\n' +
+      '        opacity: 1;\r\n' +
+      '        transform: translateY(0);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Hero Impactful Reveals */\r\n' +
+      '    .hero-reveal-title,\r\n' +
+      '    .hero-reveal-desc,\r\n' +
+      '    .hero-reveal-btns {\r\n' +
+      '        transition: all 1.4s cubic-bezier(0.2, 1, 0.3, 1);\r\n' +
+      '        filter: blur(15px);\r\n' +
+      '        transform: translateY(50px) scale(0.9);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-reveal-title.active {\r\n' +
+      '        opacity: 1 !important;\r\n' +
+      '        filter: blur(0);\r\n' +
+      '        transform: translateY(0) scale(1);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-reveal-desc.active {\r\n' +
+      '        opacity: 1 !important;\r\n' +
+      '        filter: blur(0);\r\n' +
+      '        transform: translateY(0) scale(1);\r\n' +
+      '        transition-delay: 0.3s;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-reveal-btns.active {\r\n' +
+      '        opacity: 1 !important;\r\n' +
+      '        filter: blur(0);\r\n' +
+      '        transform: translateY(0) scale(1);\r\n' +
+      '        transition-delay: 0.6s;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Interaction & Depth */\r\n' +
+      '    .hero-tilt {\r\n' +
+      '        perspective: 2000px;\r\n' +
+      '        transition: transform 0.15s ease-out;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .parallax-bg {\r\n' +
+      '        transition: transform 0.1s ease-out;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Staggered delays for items */\r\n' +
+      '    .reveal.active .reveal-item:nth-child(1) {\r\n' +
+      '        transition-delay: 0.1s;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .reveal.active .reveal-item:nth-child(2) {\r\n' +
+      '        transition-delay: 0.2s;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .reveal.active .reveal-item:nth-child(3) {\r\n' +
+      '        transition-delay: 0.3s;\r\n' +
+      '    }\r\n' +
+      '}',
+    url: 'file:///C:/Users/testf/OneDrive/Documentos/landingPage/site-kjp/input.css',
+    file: 'C:\\Users\\testf\\OneDrive\\Documentos\\landingPage\\site-kjp\\input.css'
+  },
+  plugin: 'tailwindcss'
+}
