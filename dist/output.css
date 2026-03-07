@@ -554,6 +554,40 @@ video {
   display: none;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1172,15 +1206,15 @@ html {
 /* --- Produção Musical Page Specific --- */
 
 .hero-bg-musical {
-  background-position: center 15% !important;
+  background-position: center 15%;
 }
 
 .bg-mentoria {
-  background-position: center 15% !important;
+  background-position: center 30%;
 }
 
 .card-img-musical {
-  height: 200px !important;
+  height: 200px;
 }
 
 .img-composicao {
@@ -1426,20 +1460,20 @@ html {
 }
 
 .hero-reveal-title.active {
-  opacity: 1 !important;
+  opacity: 1;
   filter: blur(0);
   transform: translateY(0) scale(1);
 }
 
 .hero-reveal-desc.active {
-  opacity: 1 !important;
+  opacity: 1;
   filter: blur(0);
   transform: translateY(0) scale(1);
   transition-delay: 0.3s;
 }
 
 .hero-reveal-btns.active {
-  opacity: 1 !important;
+  opacity: 1;
   filter: blur(0);
   transform: translateY(0) scale(1);
   transition-delay: 0.6s;
