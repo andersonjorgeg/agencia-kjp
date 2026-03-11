@@ -45,6 +45,23 @@ html {
     }
 }
 
+@keyframes green-pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+}
+
 /* --- Layout Helpers --- */
 .dark-smoke-overlay {
     background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8));
@@ -114,7 +131,7 @@ html {
     @apply absolute -top-5 -right-5 w-10 h-10 bg-[#1E90FF] text-white rounded-full flex items-center justify-center z-[10001] shadow-lg transition-transform hover:scale-110 md:-top-5 md:-right-5;
 }
 
-/* --- WhatsApp Floating Button --- */
+/* --- WhatsApp Floating Button (Padrão - Azul) --- */
 .whatsapp-float {
     @apply fixed bottom-[30px] right-[30px] w-[65px] h-[65px] bg-[#0F0F0F]/60 backdrop-blur-[15px] border-[1.5px] border-primary/40 rounded-full text-primary flex items-center justify-center no-underline z-[1000] transition-all;
     transition-duration: 400ms;
@@ -141,6 +158,39 @@ html {
     animation: blue-pulse 2.5s infinite;
 }
 
+/* --- WhatsApp Floating Button (Verde #32CD32 - Página Específica) --- */
+.whatsapp-float-green {
+    @apply fixed bottom-[30px] right-[30px] w-[65px] h-[65px] bg-[#0F0F0F]/60 backdrop-blur-[15px] border-[1.5px] rounded-full text-white flex items-center justify-center no-underline z-[1000] transition-all;
+    border-color: rgba(50, 205, 50, 0.4);
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-float-green svg {
+    @apply w-8 h-8 transition-transform;
+    transition-duration: 400ms;
+    color: #32CD32;
+}
+
+.whatsapp-float-green:hover {
+    @apply scale-110 -translate-y-[5px];
+    background-color: rgba(50, 205, 50, 0.1);
+    border-color: rgba(50, 205, 50, 0.8);
+    box-shadow: 0 12px 40px 0 rgba(50, 205, 50, 0.3);
+}
+
+.whatsapp-float-green:hover svg {
+    @apply scale-110;
+    color: #00FF00;
+}
+
+.whatsapp-float-green::before {
+    @apply content-[''] absolute w-full h-full rounded-full -z-10;
+    background-color: rgba(50, 205, 50, 0.3);
+    animation: green-pulse 2.5s infinite;
+}
+
 /* --- Custom CTA Responsivo --- */
 .custom-cta-container {
     @apply p-2 w-auto rounded-2xl;
@@ -162,11 +212,14 @@ html {
 }
 
 @media (max-width: 768px) {
-    .whatsapp-float {
+
+    .whatsapp-float,
+    .whatsapp-float-green {
         @apply bottom-5 right-5 w-[55px] h-[55px];
     }
 
-    .whatsapp-float svg {
+    .whatsapp-float svg,
+    .whatsapp-float-green svg {
         @apply w-6 h-6;
     }
 }
