@@ -22,12 +22,18 @@
 
     <!-- Top Navigation Bar (Fixo igual da Produção) -->
     <header class="fixed top-0 z-50 w-full bg-background-dark/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+        <!-- No mobile: Grid 3 colunas (Logo auto | Botão flexível no meio | Menu auto). No desktop: Flexbox tradicional -->
+        <div
+            class="max-w-7xl mx-auto px-4 md:px-6 h-20 grid grid-cols-[auto_1fr_auto] md:flex md:items-center md:justify-between">
+
+            <!-- 1. ESQUERDA: Logo -->
+            <div class="flex items-center gap-3 justify-start">
                 <span class="material-icons text-primary-mkt text-3xl">rocket_launch</span>
                 <h2 class="text-xl font-bold tracking-tight hidden md:block">KJP <span
                         class="text-primary-mkt">PRODUÇÕES &amp; AGÊNCIA</span></h2>
             </div>
+
+            <!-- Nav do Desktop (Oculta no mobile) -->
             <nav class="hidden md:flex items-center gap-8">
                 <a class="text-sm font-medium hover:text-primary-mkt transition-colors"
                     href="#diferenciais">Diferenciais</a>
@@ -37,16 +43,21 @@
                 <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#contato">Contato</a>
             </nav>
 
-            <div class="flex items-center gap-2">
+            <!-- 2. CENTRO (Mobile) / Direita (Desktop): Botão "Voltar" -->
+            <div class="flex items-center justify-center md:justify-end">
                 <button onclick="window.location.href='index.html'"
-                    class="bg-primary-mkt text-background-dark px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold hover:brightness-110 transition-all">
+                    class="bg-primary-mkt text-background-dark px-3 py-2 md:px-6 md:py-2.5 rounded-lg text-[11px] md:text-sm font-bold hover:brightness-110 transition-all whitespace-nowrap">
                     Voltar para KJP
                 </button>
-                <!-- Mobile Menu Toggle Button -->
-                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 flex items-center justify-center">
+            </div>
+
+            <!-- 3. DIREITA: Menu Hamburger (Oculto no Desktop) -->
+            <div class="flex items-center justify-end md:hidden pl-2">
+                <button id="mobile-menu-toggle" class="text-white flex items-center justify-center">
                     <span class="material-icons text-3xl">menu</span>
                 </button>
             </div>
+
         </div>
     </header>
 
