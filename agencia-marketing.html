@@ -20,9 +20,8 @@
 
 <body class="overflow-x-hidden antialiased bg-background-dark text-white font-display">
 
-    <!-- Top Navigation Bar (Fixo igual da Produção) -->
+    <!-- Top Navigation Bar -->
     <header class="fixed top-0 z-50 w-full bg-background-dark/80 backdrop-blur-md border-b border-white/10">
-        <!-- No mobile: Grid 3 colunas (Logo auto | Botão flexível no meio | Menu auto). No desktop: Flexbox tradicional -->
         <div
             class="max-w-7xl mx-auto px-4 md:px-6 h-20 grid grid-cols-[auto_1fr_auto] md:flex md:items-center md:justify-between">
 
@@ -33,7 +32,7 @@
                         class="text-primary-mkt">PRODUÇÕES &amp; AGÊNCIA</span></h2>
             </div>
 
-            <!-- Nav do Desktop (Oculta no mobile) -->
+            <!-- Nav do Desktop -->
             <nav class="hidden md:flex items-center gap-8">
                 <a class="text-sm font-medium hover:text-primary-mkt transition-colors"
                     href="#diferenciais">Diferenciais</a>
@@ -43,7 +42,7 @@
                 <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#contato">Contato</a>
             </nav>
 
-            <!-- 2. CENTRO (Mobile) / Direita (Desktop): Botão "Voltar" -->
+            <!-- 2. CENTRO (Mobile) / Direita (Desktop) -->
             <div class="flex items-center justify-center md:justify-end">
                 <button onclick="window.location.href='index.html'"
                     class="bg-primary-mkt text-background-dark px-3 py-2 md:px-6 md:py-2.5 rounded-lg text-[11px] md:text-sm font-bold hover:brightness-110 transition-all whitespace-nowrap">
@@ -51,7 +50,7 @@
                 </button>
             </div>
 
-            <!-- 3. DIREITA: Menu Hamburger (Oculto no Desktop) -->
+            <!-- 3. DIREITA: Menu Hamburger -->
             <div class="flex items-center justify-end md:hidden pl-2">
                 <button id="mobile-menu-toggle" class="text-white flex items-center justify-center">
                     <span class="material-icons text-3xl">menu</span>
@@ -74,14 +73,17 @@
                     <span class="material-icons text-3xl">close</span>
                 </button>
             </div>
-            <nav class="flex flex-col gap-6 p-8">
-                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors"
+            <nav class="grid grid-cols-3 gap-4 p-8 items-center text-center">
+                <a class="text-sm sm:text-base font-bold hover:text-primary-mkt transition-colors"
                     href="#diferenciais">Diferenciais</a>
-                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#servicos">Serviços</a>
-                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#processo">Processo</a>
-                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#faq">FAQ</a>
-                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#contato">Contato</a>
-                <div class="mt-10">
+                <a class="text-sm sm:text-base font-bold hover:text-primary-mkt transition-colors"
+                    href="#servicos">Serviços</a>
+                <a class="text-sm sm:text-base font-bold hover:text-primary-mkt transition-colors"
+                    href="#processo">Processo</a>
+                <a class="text-sm sm:text-base font-bold hover:text-primary-mkt transition-colors" href="#faq">FAQ</a>
+                <a class="text-sm sm:text-base font-bold hover:text-primary-mkt transition-colors"
+                    href="#contato">Contato</a>
+                <div class="col-span-3 mt-10">
                     <button onclick="window.location.href='index.html'"
                         class="w-full bg-primary-mkt text-background-dark py-4 rounded-xl text-lg font-bold hover:brightness-110">
                         Voltar para KJP
@@ -97,19 +99,22 @@
         <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0 bg-gradient-to-br from-background-dark to-neutral-dark">
                 <div class="absolute inset-0 bg-fume z-10"></div>
-                <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg"
+                <!-- Efeito Ken Burns e Parallax -->
+                <img class="w-full h-full object-cover ken-burns parallax-bg" src="img/agencia-de-marketing.jpg"
                     alt="Ambiente de agência de marketing com gráficos de métricas e estratégia"
                     onerror="this.classList.add('hidden');">
             </div>
-            <div class="relative z-20 max-w-4xl px-6 text-center mt-5">
-                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+            <!-- Efeito Tilt no texto principal -->
+            <div class="relative z-20 max-w-4xl px-6 text-center mt-5 hero-tilt">
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6 hero-reveal-title opacity-0">
                     Marketing Digital para Empresas que <span class="text-primary-mkt">Querem Crescer</span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-300 italic font-medium mb-10 max-w-2xl mx-auto">
+                <p
+                    class="text-lg md:text-xl text-slate-300 italic font-medium mb-10 max-w-2xl mx-auto hero-reveal-desc opacity-0">
                     Estratégias de marketing digital, gestão de tráfego, presença online e desenvolvimento web para
                     empresas que desejam aumentar sua visibilidade e conquistar novos clientes.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center hero-reveal-btns opacity-0">
                     <a href="https://wa.me/5521968845732" target="_blank" rel="noopener"
                         class="bg-primary-mkt text-white font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 hover:opacity-80">
                         <span class="material-icons">call</span> Falar no WhatsApp
@@ -123,19 +128,21 @@
         </section>
 
         <!-- Section 2: Diferenciais -->
-        <section id="diferenciais" class="relative py-24">
+        <section id="diferenciais" class="relative py-24 overflow-hidden reveal">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 z-10 bg-background-dark/90"></div>
-                <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg" alt="Fundo estratégia"
-                    onerror="this.classList.add('hidden');">
+                <img class="w-full h-full object-cover parallax-bg" src="img/agencia-de-marketing.jpg"
+                    alt="Fundo estratégia" onerror="this.classList.add('hidden');">
             </div>
             <div class="relative z-20 max-w-7xl mx-auto px-6">
-                <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4">Nossos Diferenciais</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">Por que escolher a KJP?</h3>
+                <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4 reveal-item">Nossos
+                    Diferenciais</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-12 reveal-item">Por que escolher a KJP?</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
+                    <!-- Cards com Efeito Reveal Item -->
                     <div
-                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50 reveal-item">
                         <span
                             class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">architecture</span>
                         <h4 class="text-xl font-bold text-white mb-2">Estratégias personalizadas</h4>
@@ -144,7 +151,7 @@
                     </div>
 
                     <div
-                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50 reveal-item">
                         <span
                             class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">query_stats</span>
                         <h4 class="text-xl font-bold text-white mb-2">Marketing orientado a resultados</h4>
@@ -153,7 +160,7 @@
                     </div>
 
                     <div
-                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50 reveal-item">
                         <span
                             class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">trending_up</span>
                         <h4 class="text-xl font-bold text-white mb-2">Crescimento sustentável</h4>
@@ -161,7 +168,7 @@
                     </div>
 
                     <div
-                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50 reveal-item">
                         <span
                             class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">public</span>
                         <h4 class="text-xl font-bold text-white mb-2">Soluções completas</h4>
@@ -173,57 +180,56 @@
         </section>
 
         <!-- Section 3: Serviços Principais -->
-        <section id="servicos" class="py-24 bg-background-dark">
+        <section id="servicos" class="py-24 bg-background-dark reveal">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="mb-16">
+                <div class="mb-16 text-center md:text-left reveal-item">
                     <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4">Portfólio de Soluções
                     </h2>
                     <h3 class="text-3xl md:text-5xl font-bold text-white">SERVIÇOS <span
                             class="text-primary-mkt">PRINCIPAIS</span></h3>
                 </div>
+                <!-- Container populado pelo JS. Adicionaremos reveal-item nos cards via JS -->
                 <div id="servicos-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
             </div>
         </section>
 
         <!-- Section 4: Serviços Complementares -->
-        <section class="py-24 bg-background-dark/50">
+        <section class="py-24 bg-background-dark/50 reveal">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">SEO</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Otimização para melhorar o posicionamento do
                             site da empresa no Google.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">Produção de Cursos Online</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Desenvolvemos todo o processo de criação de
                             cursos digitais para profissionais que desejam transformar seu conhecimento em um produto
-                            online. Nossa equipe auxilia desde o planejamento do conteúdo até a gravação, edição e
-                            publicação do curso em plataformas de venda.</p>
+                            online.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">Google Business Profile</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Criamos e otimizamos o perfil da empresa no
-                            Google para que ela apareça nas pesquisas locais e no Google Maps quando clientes procuram
-                            serviços na região.</p>
+                            Google para que ela apareça nas pesquisas locais e no Google Maps.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">E-mail Marketing</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Campanhas estratégicas de relacionamento e
                             vendas para nutrir sua base de clientes.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">Cartão Virtual Digital</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Cartão digital com acesso rápido a contatos e
                             redes sociais para networking profissional.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt reveal-item">
                         <h4 class="text-xl font-bold text-white mb-3">Otimização de Presença Digital</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Melhoria da presença online da empresa em
                             todos os canais digitais disponíveis.</p>
@@ -234,28 +240,28 @@
         </section>
 
         <!-- Section 5: Resultados -->
-        <section class="relative py-24 min-h-[500px] flex items-center">
+        <section class="relative py-24 min-h-[500px] flex items-center overflow-hidden reveal">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 bg-fume z-10"></div>
-                <img class="w-full h-full object-cover"
+                <img class="w-full h-full object-cover parallax-bg"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRBKN4xoXe91vLuU0sksbY8KMRsuqMMHbiPmO8BGTyWgvx7FT4Ws8NWnMIXrvD6szZ5QFrCcg8_nEEaXY3Saj-30DkYAQln4EbVddLV-XGK1Jaiu3mc56DqzdZ2jZIpq-kM8T4R_VJvjNRaVOAKgSZWOfxBvRAOJZE3Bke0CoShKFLNPCT6AubOP8HJzwLW0vxzE15W5fHmZEiL2CtCe8PHmsLSujWtW_9HvefS03VB43W6z94DBrrnj91GDMoKyjP9G-Nv2Nz7W5o"
                     alt="Dados de crescimento de negócios e métricas positivas">
             </div>
             <div
                 class="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-                <div class="text-center">
+                <div class="text-center reveal-item">
                     <span class="material-icons text-5xl mb-4 block text-primary-mkt">insights</span>
                     <h5 class="text-white text-lg font-bold">Aumento da presença digital</h5>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal-item">
                     <span class="material-icons text-5xl mb-4 block text-primary-mkt">group_add</span>
                     <h5 class="text-white text-lg font-bold">Geração de novos clientes</h5>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal-item">
                     <span class="material-icons text-5xl mb-4 block text-primary-mkt">payments</span>
                     <h5 class="text-white text-lg font-bold">Aumento das vendas</h5>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal-item">
                     <span class="material-icons text-5xl mb-4 block text-primary-mkt">verified</span>
                     <h5 class="text-white text-lg font-bold">Fortalecimento da marca</h5>
                 </div>
@@ -263,14 +269,14 @@
         </section>
 
         <!-- Section 6: Processo -->
-        <section id="processo" class="py-24 bg-background-dark">
+        <section id="processo" class="py-24 bg-background-dark reveal">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Nosso <span
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16 reveal-item">Nosso <span
                         class="text-primary-mkt">Processo</span> de Trabalho</h2>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
                     <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 z-0 bg-primary-mkt/20"></div>
 
-                    <div class="relative z-10 text-center">
+                    <div class="relative z-10 text-center reveal-item">
                         <div
                             class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
                             1</div>
@@ -278,7 +284,7 @@
                         <p class="text-slate-400 text-sm">Entendemos suas dores e objetivos.</p>
                     </div>
 
-                    <div class="relative z-10 text-center">
+                    <div class="relative z-10 text-center reveal-item">
                         <div
                             class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
                             2</div>
@@ -286,7 +292,7 @@
                         <p class="text-slate-400 text-sm">Traçamos o caminho para o sucesso.</p>
                     </div>
 
-                    <div class="relative z-10 text-center">
+                    <div class="relative z-10 text-center reveal-item">
                         <div
                             class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
                             3</div>
@@ -294,7 +300,7 @@
                         <p class="text-slate-400 text-sm">Colocamos a mão na massa com precisão.</p>
                     </div>
 
-                    <div class="relative z-10 text-center">
+                    <div class="relative z-10 text-center reveal-item">
                         <div
                             class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
                             4</div>
@@ -307,12 +313,12 @@
         </section>
 
         <!-- Section 7: FAQ -->
-        <section id="faq" class="py-24 bg-background-dark/50">
+        <section id="faq" class="py-24 bg-background-dark/50 reveal">
             <div class="max-w-3xl mx-auto px-6">
-                <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
+                <h2 class="text-3xl font-bold text-white text-center mb-12 reveal-item">Perguntas Frequentes</h2>
                 <div class="space-y-4" id="faq-container">
 
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">O que faz uma agência de marketing digital?</h4>
@@ -325,7 +331,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Minha empresa precisa de marketing digital?</h4>
@@ -337,7 +343,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Quanto custa contratar uma agência de marketing digital?
@@ -350,11 +356,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados no marketing digital?
-                            </h4>
+                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados?</h4>
                             <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
@@ -364,41 +369,15 @@
                         </div>
                     </div>
 
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
-                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
-                            onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Vocês atendem qualquer tipo de empresa?</h4>
-                            <span class="material-icons faq-icon text-primary-mkt">add</span>
-                        </div>
-                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
-                            Sim. Atendemos empresas de diversos segmentos, profissionais autônomos e empreendedores que
-                            desejam fortalecer sua presença digital e atrair novos clientes.
-                        </div>
-                    </div>
-
-                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
-                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
-                            onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Como posso contratar os serviços da agência?</h4>
-                            <span class="material-icons faq-icon text-primary-mkt">add</span>
-                        </div>
-                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
-                            Você pode entrar em contato diretamente pelo botão de WhatsApp ou solicitar um diagnóstico
-                            para que possamos analisar sua empresa e apresentar a melhor estratégia de marketing
-                            digital.
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
         <!-- Section 8: Final CTA -->
-        <section id="contato" class="py-24 text-center bg-background-dark">
-            <div class="max-w-3xl mx-auto px-6">
+        <section id="contato" class="py-24 text-center bg-background-dark reveal">
+            <div class="max-w-3xl mx-auto px-6 reveal-item">
                 <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para crescer com marketing digital
-                    profissional?
-                </h2>
+                    profissional?</h2>
                 <p class="text-slate-400 text-lg mb-12">Fale com um especialista hoje mesmo e descubra como podemos
                     acelerar seu crescimento.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -409,10 +388,6 @@
                     <a href="#contato"
                         class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
                         Solicitar diagnóstico
-                    </a>
-                    <a href="#contato"
-                        class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
-                        Falar com especialista
                     </a>
                 </div>
             </div>
@@ -453,29 +428,12 @@
         </svg>
     </a>
 
+    <!-- INCLUIR O ARQUIVO SCRIPT.JS PARA QUE AS ANIMAÇÕES FUNCIONEM -->
+    <script src="./script.js" defer></script>
+
     <script>
-        // ====== LÓGICA DO MENU MOBILE ======
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-        function openMenu() {
-            mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
-            document.body.style.overflow = 'hidden'; // Evita rolagem da página quando o menu estiver aberto
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
-            document.body.style.overflow = ''; // Restaura a rolagem da página
-        }
-
-        mobileMenuToggle.addEventListener('click', openMenu);
-        mobileMenuClose.addEventListener('click', closeMenu);
-        mobileMenuLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-
         // ====== DADOS DOS SERVIÇOS ======
+        // (O menu mobile e animações são controlados pelo script.js)
         const servicosData = [
             {
                 titulo: "CONSULTORIA E ESTRATÉGIA DE MARKETING",
@@ -548,13 +506,14 @@
             }
         ];
 
-        // ====== FUNÇÃO PARA RENDERIZAR CARDS (Refatorado com Tailwind) ======
+        // ====== FUNÇÃO PARA RENDERIZAR CARDS ======
         function renderServiços() {
             const container = document.getElementById('servicos-container');
 
             servicosData.forEach(servico => {
                 const card = document.createElement('div');
-                card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px]';
+                // Adicionamos 'reveal-item' para o card animar ao aparecer pelo script.js
+                card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px] reveal-item';
 
                 // Imagem de background
                 const imagemDiv = document.createElement('div');
@@ -657,8 +616,11 @@
             });
         }
 
-        // Update footer year
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
+        // Update footer year (Seguro sem usar 'const' conflitante)
+        const footerSpan = document.getElementById('footer-year');
+        if (footerSpan) {
+            footerSpan.textContent = new Date().getFullYear();
+        }
 
         // FAQ Toggle
         function toggleFaq(trigger) {
@@ -677,10 +639,20 @@
             }
         }
 
-        // Renderizar serviços ao carregar a página
-        document.addEventListener('DOMContentLoaded', renderServiços);
-    </script>
+        // Renderizar serviços e disparar observadores do script.js nos itens novos
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServiços();
 
+            // Depois de renderizar via JS, precisamos avisar o IntersectionObserver global do script.js
+            // para animar as divs com "reveal-item" que acabaram de ser criadas.
+            setTimeout(() => {
+                if (typeof revealObserver !== 'undefined') {
+                    const newElements = document.querySelectorAll('#servicos-container .reveal-item');
+                    newElements.forEach(el => revealObserver.observe(el));
+                }
+            }, 100);
+        });
+    </script>
 </body>
 
 </html>
