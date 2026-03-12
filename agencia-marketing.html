@@ -57,6 +57,34 @@
             border-color: #32CD32;
         }
 
+        /* Card Grid Layout */
+        .card-content {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .card-services {
+            display: grid;
+            gap: 1rem;
+            overflow-y: auto;
+        }
+
+        .service-item {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        .service-section {
+            display: grid;
+            gap: 0.75rem;
+        }
+
         /* Accordion FAQ */
         .faq-answer {
             max-height: 0;
@@ -126,7 +154,8 @@
                     Marketing Digital para Empresas que <span style="color:#32CD32;">Querem Crescer</span>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-300 italic font-medium mb-10 max-w-2xl mx-auto">
-                    Estratégias de marketing digital, gestão de tráfego e soluções completas para o seu negócio.
+                    Estratégias de marketing digital, gestão de tráfego, presença online e desenvolvimento web para
+                    empresas que desejam aumentar sua visibilidade e conquistar novos clientes.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://wa.me/5521968845732" target="_blank" rel="noopener"
@@ -190,8 +219,8 @@
                         onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)'">
                         <span class="material-icons text-4xl mb-4 block transition-transform group-hover:scale-110"
                             style="color:#32CD32;">public</span>
-                        <h4 class="text-xl font-bold text-white mb-2">Soluções completas</h4>
-                        <p class="text-slate-400">Presença online 360 graus para cobrir todos os pontos de contato.</p>
+                        <h4 class="text-xl font-bold text-white mb-2">Soluções completas de presença online</h4>
+                        <p class="text-slate-400">Cobertura de todos os pontos de contato digital da sua empresa.</p>
                     </div>
 
                 </div>
@@ -207,179 +236,7 @@
                     <h3 class="text-3xl md:text-5xl font-bold text-white">SERVIÇOS <span
                             style="color:#32CD32;">PRINCIPAIS</span></h3>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Card 1 -->
-                    <div class="relative h-[400px] group rounded-2xl overflow-hidden">
-                        <div class="absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10">
-                        </div>
-                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qXc4R69H90Wgz-_RHlYksOc9CxgLuxVQA6SHGBvHV6S6rSWQzx2z7788YvlvPM9syIa6KtGuSb75Me2KepjNvQA-dai92DQVHVdPa3iwf_LnDW1Uid_7YQFx95YO3DsBRZVLb0tKEyn0zO62WraDLub-QJybn88H8KTvRl5R4-Th3uhlawVUh5l04mVNDcOloYX_phZff_4ElANTzV3mENZqBGavJX_ZKJ2BfPCrjE5RYyNLpzKgLMHIcsj-xE4VSiMWaKAUHgh6"
-                            alt="Reunião de planejamento estratégico de marketing">
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-white mb-4 uppercase">CONSULTORIA E ESTRATÉGIA DE
-                                MARKETING</h4>
-                            <p
-                                class="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                Desenvolvimento de planos estratégicos focados em posicionamento e crescimento
-                                acelerado.
-                            </p>
-                            <ul
-                                class="space-y-2 text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <li class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#32CD32;">
-                                    Serviços incluídos:</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Diagnóstico 360º</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Análise de Concorrência</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Definição de Persona</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Funil de Vendas</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Plano de Ação Semestral</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="relative h-[400px] group rounded-2xl overflow-hidden">
-                        <div class="absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10">
-                        </div>
-                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkab-uITEraJ7zS9BRAMO25ng-avFs44WniHIdWV9i8elT4b1Ye7dhkH_YnMmSrgr6CDooAoBerluIby1XW2BBmUl4QbSPPaf7OSkIXkFK_NnHBVwpZldSRVepmFXij7jZ5pOBG3hyP9rLchzGaVJQo-vYMe1eUcaZ2N1KzmFDW67HqSlWJPvR8Y0drmtV28S6-Jjgvqi734rVoJVXjYqqG5WvPImHLyTNHw9oEl5kzx2oGxY5I7hwFmIf_hMy0E7D7_y4N_nCiOD"
-                            alt="Dashboard de anúncios digitais com métricas altas">
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-white mb-4 uppercase">GESTÃO DE TRÁFEGO PAGO</h4>
-                            <p
-                                class="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                Campanhas otimizadas para gerar leads qualificados e vendas diretas com o melhor ROI.
-                            </p>
-                            <ul
-                                class="space-y-2 text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <li class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#32CD32;">
-                                    Serviços incluídos:</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Google Ads (Busca/Display)</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Meta Ads (Insta/FB)</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Remarketing Estratégico</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Configuração de Pixels</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Testes A/B de Criativos</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Relatórios Mensais</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="relative h-[400px] group rounded-2xl overflow-hidden">
-                        <div class="absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10">
-                        </div>
-                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXvvjNKXHylQ4x5Cml771_--Jz9OHrvxVxPQKXsW35JPyDjI3Z2Bc2ce9gyvy3SAVrVUKSBWOvIfVtYPFeWJ3iuTeGKprcebvIRuizrcaiDpdkY6S0ZJEPnTTFHtuMELPoe4NBPDjlyjyD-3_APo6lx-kT1eTwSEA-DPXdB6c9q6g1o0pPc_Rmr7D8f19k0AqpiK7WOr1VezpGUicJIBACiio-Y6c-1xSTckxM75t9Sxnd045Aze6-Hzka5rn2_Hr4Gh62N6ZNluRA"
-                            alt="Criação de conteúdo para redes sociais">
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-white mb-4 uppercase">GESTÃO DE REDES SOCIAIS</h4>
-                            <p
-                                class="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                Presença digital profissional com conteúdo que engaja e converte seguidores em clientes.
-                            </p>
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 space-y-4">
-                                <ul class="space-y-1 text-slate-200">
-                                    <li class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#32CD32;">
-                                        Serviços incluídos:</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> Calendário de Conteúdo</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> Design de Posts</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> Copywriting</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> SAC 2.0</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> Gestão de Influenciadores</li>
-                                    <li class="flex items-center gap-2 text-xs"><span class="material-icons text-xs"
-                                            style="color:#32CD32;">check_circle</span> Monitoramento de Marca</li>
-                                </ul>
-                                <ul class="space-y-1 text-slate-200">
-                                    <li class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#32CD32;">
-                                        Plataformas:</li>
-                                    <li class="flex items-center gap-2 text-xs">Instagram, Facebook, LinkedIn, TikTok e
-                                        Pinterest</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="relative h-[400px] group rounded-2xl overflow-hidden md:col-span-2 lg:col-span-1">
-                        <div class="absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10">
-                        </div>
-                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfRdCbKO62DOx6uVXlVWkaBW0PBN2I7zsNM1jBX08Xmu92dQya9Bd5ZNe5gyNTB_L-Jwpean1KAjHQzEZ96CxkLR3sb3K5vqFF2fuKhsHFGLxIf3CXXM0ZFfTjPpE1K6sCXFotAKKajoCanjI9Nc628-4d7dudMNGTdbiu_9rWOQ7WKj4a31gGNoFDxjxmCl20vBRP3_e9nPCdLvnv3T46VhKXEGqoQDXOXtoye-SsZpaDYrezWmjBdWRdD9Shoh1g8TV7Esq_KvW"
-                            alt="Desenvolvimento web profissional">
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-white mb-4 uppercase">DESENVOLVIMENTO WEB</h4>
-                            <p
-                                class="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                Criação de sites de alta performance, rápidos, seguros e otimizados para conversão.
-                            </p>
-                            <ul
-                                class="space-y-2 text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <li class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#32CD32;">
-                                    Serviços incluídos:</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Landing Pages de Alta Conversão</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Sites Institucionais</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> E-commerce Completo</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Otimização de Velocidade (WPO)</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Manutenção Técnica</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Integração com CRM</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="relative h-[400px] group rounded-2xl overflow-hidden md:col-span-2">
-                        <div class="absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10">
-                        </div>
-                        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwMoqnvACuO2uqkAaqe_CAeaTS8f1FjpgjB_bVkSiOGRzJRY_4VB7ZhvvlJhA3jif1S8seOPBWlfnu57PPf41_cWpkpbOEFTbYk5jGUuiwe0Kb0LITmBF_CY_lLHMfq7s-5Gj8Cdwy_LQEb_8lNKDdLMsIpoSTPGN54mPfoaiBV7v5-aCA6UrfuCM881mHYKL1fIuoOZljRlUVHIRgJVKTSXqaafQtjH4bNy9ckXZxHVBlQdn5BDvCiEnZWqjWN3EbcRwEfHOyY0"
-                            alt="Processo criativo de branding e identidade visual">
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-white mb-4 uppercase">BRANDING E CRIAÇÃO</h4>
-                            <p
-                                class="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                Construção de identidades visuais memoráveis que transmitem autoridade e valor.
-                            </p>
-                            <ul
-                                class="space-y-2 text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <li class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#32CD32;">
-                                    Serviços incluídos:</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Criação de Logotipo</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Identidade Visual Completa</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Manual da Marca</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Design de Materiais Offline</li>
-                                <li class="flex items-center gap-2"><span class="material-icons text-sm"
-                                        style="color:#32CD32;">check_circle</span> Rebranding Estratégico</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
+                <div id="servicos-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
             </div>
         </section>
 
@@ -390,33 +247,41 @@
 
                     <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
                         <h4 class="text-xl font-bold text-white mb-3">SEO</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Otimização de mecanismos de busca para
-                            aparecer organicamente no topo do Google.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Otimização para melhorar o posicionamento do
+                            site da empresa no Google.</p>
                     </div>
 
                     <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
-                        <h4 class="text-xl font-bold text-white mb-3">Cursos Online</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Produção completa, gravação, edição e
-                            lançamento da sua plataforma de ensino.</p>
+                        <h4 class="text-xl font-bold text-white mb-3">Produção de Cursos Online</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Desenvolvemos todo o processo de criação de
+                            cursos digitais para profissionais que desejam transformar seu conhecimento em um produto
+                            online. Nossa equipe auxilia desde o planejamento do conteúdo até a gravação, edição e
+                            publicação do curso em plataformas de venda.</p>
                     </div>
 
                     <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
                         <h4 class="text-xl font-bold text-white mb-3">Google Business Profile</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Otimização do seu perfil local para ser
-                            encontrado por clientes na sua região.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Criamos e otimizamos o perfil da empresa no
+                            Google para que ela apareça nas pesquisas locais e no Google Maps quando clientes procuram
+                            serviços na região.</p>
                     </div>
 
                     <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
                         <h4 class="text-xl font-bold text-white mb-3">E-mail Marketing</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Régua de relacionamento e automação para
-                            nutrição da sua base de leads.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Campanhas estratégicas de relacionamento e
+                            vendas para nutrir sua base de clientes.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4 lg:col-span-2"
-                        style="border-left-color:#32CD32;">
-                        <h4 class="text-xl font-bold text-white mb-3">Cartão Virtual Interativo</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Sua apresentação profissional moderna e
-                            digital para networking rápido.</p>
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                        <h4 class="text-xl font-bold text-white mb-3">Cartão Virtual Digital</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Cartão digital com acesso rápido a contatos e
+                            redes sociais para networking profissional.</p>
+                    </div>
+
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                        <h4 class="text-xl font-bold text-white mb-3">Otimização de Presença Digital</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Melhoria da presença online da empresa em
+                            todos os canais digitais disponíveis.</p>
                     </div>
 
                 </div>
@@ -507,41 +372,77 @@
                     <div class="bg-card-dark rounded-lg p-5 border border-white/5">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados no tráfego pago?</h4>
+                            <h4 class="text-white font-bold">O que faz uma agência de marketing digital?</h4>
                             <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
-                            Os primeiros resultados aparecem em 7 a 15 dias após o início das campanhas. Resultados
-                            consistentes e otimizados são alcançados tipicamente entre 30 e 90 dias, dependendo do nicho
-                            e do orçamento investido.
+                            Uma agência de marketing digital ajuda empresas a crescer na internet através de estratégias
+                            de posicionamento online, gestão de redes sociais, tráfego pago, desenvolvimento de sites e
+                            fortalecimento da presença digital.
                         </div>
                     </div>
 
                     <div class="bg-card-dark rounded-lg p-5 border border-white/5">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Minha empresa é pequena, o marketing digital serve para
-                                mim?</h4>
+                            <h4 class="text-white font-bold">Minha empresa precisa de marketing digital?</h4>
                             <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
-                            Sim! O marketing digital é especialmente vantajoso para pequenas empresas porque permite
-                            segmentação precisa do público e controle total do orçamento, competindo de forma
-                            inteligente com empresas de qualquer porte.
+                            Se sua empresa deseja aumentar sua visibilidade, conquistar novos clientes e fortalecer sua
+                            marca na internet, o marketing digital é essencial para competir no mercado atual.
                         </div>
                     </div>
 
                     <div class="bg-card-dark rounded-lg p-5 border border-white/5">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Vocês fazem apenas a gestão de tráfego ou também os
-                                criativos?</h4>
+                            <h4 class="text-white font-bold">Quanto custa contratar uma agência de marketing digital?
+                            </h4>
                             <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
-                            Oferecemos um serviço completo! Além da gestão estratégica de tráfego, nossa equipe cuida da
-                            criação dos criativos (artes, vídeos, copies), garantindo coerência entre a estratégia e a
-                            comunicação da sua marca.
+                            Os valores variam de acordo com os serviços contratados e a necessidade de cada empresa.
+                            Trabalhamos com soluções personalizadas para cada tipo de negócio.
+                        </div>
+                    </div>
+
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
+                            onclick="toggleFaq(this)">
+                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados no marketing digital?
+                            </h4>
+                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                        </div>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Algumas estratégias, como anúncios pagos, podem gerar resultados rapidamente. Já estratégias
+                            como posicionamento digital e crescimento orgânico costumam apresentar resultados
+                            consistentes ao longo dos meses.
+                        </div>
+                    </div>
+
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
+                            onclick="toggleFaq(this)">
+                            <h4 class="text-white font-bold">Vocês atendem qualquer tipo de empresa?</h4>
+                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                        </div>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Sim. Atendemos empresas de diversos segmentos, profissionais autônomos e empreendedores que
+                            desejam fortalecer sua presença digital e atrair novos clientes.
+                        </div>
+                    </div>
+
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5">
+                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
+                            onclick="toggleFaq(this)">
+                            <h4 class="text-white font-bold">Como posso contratar os serviços da agência?</h4>
+                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                        </div>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Você pode entrar em contato diretamente pelo botão de WhatsApp ou solicitar um diagnóstico
+                            para que possamos analisar sua empresa e apresentar a melhor estratégia de marketing
+                            digital.
                         </div>
                     </div>
 
@@ -552,7 +453,8 @@
         <!-- Section 8: Final CTA -->
         <section class="py-24 text-center" style="background-color:#0F0F0F;">
             <div class="max-w-3xl mx-auto px-6">
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para elevar o nível do seu negócio?
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para crescer com marketing digital
+                    profissional?
                 </h2>
                 <p class="text-slate-400 text-lg mb-12">Fale com um especialista hoje mesmo e descubra como podemos
                     acelerar seu crescimento.</p>
@@ -568,6 +470,11 @@
                         class="font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-white text-center"
                         style="background-color:#32CD32;">
                         Solicitar diagnóstico
+                    </a>
+                    <a href="index.html#contato"
+                        class="font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-white text-center"
+                        style="background-color:#32CD32;">
+                        Falar com especialista
                     </a>
                 </div>
             </div>
@@ -609,6 +516,212 @@
     </a>
 
     <script>
+        // ====== DADOS DOS SERVIÇOS ======
+        const servicosData = [
+            {
+                titulo: "CONSULTORIA E ESTRATÉGIA DE MARKETING",
+                descricao: "Analisamos o posicionamento digital da sua empresa e criamos estratégias personalizadas para fortalecer sua marca e aumentar sua presença na internet.",
+                imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-qXc4R69H90Wgz-_RHlYksOc9CxgLuxVQA6SHGBvHV6S6rSWQzx2z7788YvlvPM9syIa6KtGuSb75Me2KepjNvQA-dai92DQVHVdPa3iwf_LnDW1Uid_7YQFx95YO3DsBRZVLb0tKEyn0zO62WraDLub-QJybn88H8KTvRl5R4-Th3uhlawVUh5l04mVNDcOloYX_phZff_4ElANTzV3mENZqBGavJX_ZKJ2BfPCrjE5RYyNLpzKgLMHIcsj-xE4VSiMWaKAUHgh6",
+                alt: "Reunião de planejamento estratégico de marketing",
+                servicos: [
+                    { nome: "Consultoria de Marketing Digital", desc: "orientação estratégica para presença online" },
+                    { nome: "Análise de Marketing", desc: "avaliação da comunicação da empresa" },
+                    { nome: "Planejamento Estratégico", desc: "definição de ações e metas de marketing" },
+                    { nome: "Diagnóstico de Presença Digital", desc: "análise completa do posicionamento online" },
+                    { nome: "Consultoria de Crescimento Digital", desc: "estratégias para expansão digital" }
+                ]
+            },
+            {
+                titulo: "GESTÃO DE TRÁFEGO PAGO",
+                descricao: "Criamos e gerenciamos campanhas de anúncios online focadas em atrair novos clientes e aumentar as vendas da empresa.",
+                imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuCfkab-uITEraJ7zS9BRAMO25ng-avFs44WniHIdWV9i8elT4b1Ye7dhkH_YnMmSrgr6CDooAoBerluIby1XW2BBmUl4QbSPPaf7OSkIXkFK_NnHBVwpZldSRVepmFXij7jZ5pOBG3hyP9rLchzGaVJQo-vYMe1eUcaZ2N1KzmFDW67HqSlWJPvR8Y0drmtV28S6-Jjgvqi734rVoJVXjYqqG5WvPImHLyTNHw9oEl5kzx2oGxY5I7hwFmIf_hMy0E7D7_y4N_nCiOD",
+                alt: "Dashboard de anúncios digitais com métricas altas",
+                servicos: [
+                    { nome: "Gestão de Tráfego Pago", desc: "criação e gerenciamento de campanhas" },
+                    { nome: "Gestão de Anúncios Online", desc: "configuração e otimização de anúncios" },
+                    { nome: "Facebook Ads", desc: "campanhas segmentadas na plataforma Meta" },
+                    { nome: "Google Ads", desc: "anúncios na busca do Google" },
+                    { nome: "Campanhas de Geração de Leads", desc: "captação de novos clientes" },
+                    { nome: "Campanhas de Vendas", desc: "anúncios focados em conversão" }
+                ]
+            },
+            {
+                titulo: "GESTÃO DE REDES SOCIAIS",
+                descricao: "Gerenciamos redes sociais com planejamento estratégico, produção de conteúdo e captação de vídeos para fortalecer a presença digital da empresa.",
+                imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuDXvvjNKXHylQ4x5Cml771_--Jz9OHrvxVxPQKXsW35JPyDjI3Z2Bc2ce9gyvy3SAVrVUKSBWOvIfVtYPFeWJ3iuTeGKprcebvIRuizrcaiDpdkY6S0ZJEPnTTFHtuMELPoe4NBPDjlyjyD-3_APo6lx-kT1eTwSEA-DPXdB6c9q6g1o0pPc_Rmr7D8f19k0AqpiK7WOr1VezpGUicJIBACiio-Y6c-1xSTckxM75t9Sxnd045Aze6-Hzka5rn2_Hr4Gh62N6ZNluRA",
+                alt: "Criação de conteúdo para redes sociais",
+                servicos: [
+                    { nome: "Gestão de Redes Sociais", desc: "administração profissional" },
+                    { nome: "Planejamento de Conteúdo", desc: "organização estratégica" },
+                    { nome: "Produção de Posts", desc: "conteúdo visual" },
+                    { nome: "Videomaker", desc: "produção de vídeos" },
+                    { nome: "Storymaker", desc: "conteúdos para stories" }
+                ],
+                redes: [
+                    { nome: "Facebook Fanpage", desc: "página empresarial" },
+                    { nome: "Instagram", desc: "produção de conteúdo" },
+                    { nome: "YouTube", desc: "gestão de canal" },
+                    { nome: "TikTok", desc: "conteúdo estratégico" },
+                    { nome: "Kwai", desc: "vídeos curtos" }
+                ]
+            },
+            {
+                titulo: "DESENVOLVIMENTO WEB",
+                descricao: "Criamos sites profissionais e páginas digitais que ajudam empresas a se posicionar na internet e conquistar novos clientes.",
+                imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuABfRdCbKO62DOx6uVXlVWkaBW0PBN2I7zsNM1jBX08Xmu92dQya9Bd5ZNe5gyNTB_L-Jwpean1KAjHQzEZ96CxkLR3sb3K5vqFF2fuKhsHFGLxIf3CXXM0ZFfTjPpE1K6sCXFotAKKajoCanjI9Nc628-4d7dudMNGTdbiu_9rWOQ7WKj4a31gGNoFDxjxmCl20vBRP3_e9nPCdLvnv3T46VhKXEGqoQDXOXtoye-SsZpaDYrezWmjBdWRdD9Shoh1g8TV7Esq_KvW",
+                alt: "Desenvolvimento web profissional",
+                servicos: [
+                    { nome: "Criação de Sites Institucionais", desc: "site profissional para apresentação da empresa" },
+                    { nome: "Criação de Landing Pages", desc: "páginas focadas em geração de leads" },
+                    { nome: "Criação de Páginas de Vendas", desc: "páginas otimizados para conversão" },
+                    { nome: "Desenvolvimento de Websites", desc: "criação completa de sites" },
+                    { nome: "Criação de E-commerce", desc: "lojas virtuais para vendas online" },
+                    { nome: "Otimização SEO", desc: "melhoria de posicionamento no Google" }
+                ]
+            },
+            {
+                titulo: "BRANDING E CRIAÇÃO",
+                descricao: "Criamos identidades visuais e materiais de comunicação que fortalecem a marca e transmitem profissionalismo.",
+                imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuDwMoqnvACuO2uqkAaqe_CAeaTS8f1FjpgjB_bVkSiOGRzJRY_4VB7ZhvvlJhA3jif1S8seOPBWlfnu57PPf41_cWpkpbOEFTbYk5jGUuiwe0Kb0LITmBF_CY_lLHMfq7s-5Gj8Cdwy_LQEb_8lNKDdLMsIpoSTPGN54mPfoaiBV7v5-aCA6UrfuCM881mHYKL1fIuoOZljRlUVHIRgJVKTSXqaafQtjH4bNy9ckXZxHVBlQdn5BDvCiEnZWqjWN3EbcRwEfHOyY0",
+                alt: "Processo criativo de branding e identidade visual",
+                servicos: [
+                    { nome: "Criação de Identidade Visual", desc: "definição visual completa da marca" },
+                    { nome: "Design de Logotipo", desc: "criação profissional de logomarca" },
+                    { nome: "Design Publicitário", desc: "materiais gráficos para campanhas" },
+                    { nome: "Produção de Foto e Vídeo", desc: "captação audiovisual profissional" },
+                    { nome: "Criação de Materiais de Campanha", desc: "artes para marketing" }
+                ]
+            }
+        ];
+
+        // ====== FUNÇÃO PARA RENDERIZAR CARDS ======
+        function renderServiços() {
+            const container = document.getElementById('servicos-container');
+
+            servicosData.forEach(servico => {
+                const card = document.createElement('div');
+                card.className = `relative group rounded-2xl overflow-hidden`;
+                // Sem altura fixa - altura dinâmica baseada no conteúdo
+                card.style.minHeight = '450px'; // Altura mínima para visual agradável
+                // Imagem de background
+                const imagemDiv = document.createElement('div');
+                imagemDiv.className = 'absolute inset-0';
+                imagemDiv.style.backgroundImage = `url('${servico.imagem}')`;
+                imagemDiv.style.backgroundSize = 'cover';
+                imagemDiv.style.backgroundPosition = 'center';
+                imagemDiv.style.zIndex = '0';
+                card.appendChild(imagemDiv);
+
+                // Overlay
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10';
+                card.appendChild(overlay);
+
+                // Conteúdo
+                const content = document.createElement('div');
+                content.className = 'relative z-20 px-12 py-10 h-full';
+                content.style.display = 'grid';
+                content.style.gridTemplateRows = 'auto auto';
+                content.style.gap = '1rem';
+                content.style.alignContent = 'start';
+
+                // Header do card
+                const header = document.createElement('div');
+                header.style.display = 'grid';
+                header.style.gap = '1rem';
+
+                const titulo = document.createElement('h4');
+                titulo.className = 'text-2xl font-bold text-white uppercase';
+                titulo.textContent = servico.titulo;
+                header.appendChild(titulo);
+
+                const descricao = document.createElement('p');
+                descricao.className = 'text-slate-300 text-base';
+                descricao.textContent = servico.descricao;
+                header.appendChild(descricao);
+
+                content.appendChild(header);
+
+                // Serviços
+                const servicosContainer = document.createElement('div');
+                servicosContainer.style.display = 'grid';
+                servicosContainer.style.gap = '1rem';
+                servicosContainer.style.overflowY = 'auto';
+
+                // Serviços incluídos
+                if (servico.servicos && servico.servicos.length > 0) {
+                    const servicosSection = document.createElement('div');
+                    servicosSection.style.display = 'grid';
+                    servicosSection.style.gap = '0.75rem';
+
+                    const servicosTitulo = document.createElement('div');
+                    servicosTitulo.className = 'text-sm font-bold uppercase tracking-wider';
+                    servicosTitulo.style.color = '#32CD32';
+                    servicosTitulo.textContent = 'Serviços incluídos:';
+                    servicosSection.appendChild(servicosTitulo);
+
+                    servico.servicos.forEach(s => {
+                        const item = document.createElement('div');
+                        item.style.display = 'grid';
+                        item.style.gap = '0.25rem';
+
+                        const nome = document.createElement('div');
+                        nome.className = 'font-semibold text-xl';
+                        nome.style.color = '#ffffff';
+                        nome.textContent = s.nome;
+                        item.appendChild(nome);
+
+                        const desc = document.createElement('div');
+                        desc.className = 'text-base text-slate-400 leading-tight';
+                        desc.textContent = s.desc;
+                        item.appendChild(desc);
+
+                        servicosSection.appendChild(item);
+                    });
+
+                    servicosContainer.appendChild(servicosSection);
+                }
+
+                // Redes sociais (se houver)
+                if (servico.redes && servico.redes.length > 0) {
+                    const redesSection = document.createElement('div');
+                    redesSection.style.display = 'grid';
+                    redesSection.style.gap = '0.75rem';
+
+                    const redesTitulo = document.createElement('div');
+                    redesTitulo.className = 'text-sm font-bold uppercase tracking-wider';
+                    redesTitulo.style.color = '#32CD32';
+                    redesTitulo.textContent = 'Redes sociais:';
+                    redesSection.appendChild(redesTitulo);
+
+                    servico.redes.forEach(r => {
+                        const item = document.createElement('div');
+                        item.style.display = 'grid';
+                        item.style.gap = '0.25rem';
+
+                        const nome = document.createElement('div');
+                        nome.className = 'font-semibold text-xl';
+                        nome.style.color = '#ffffff';
+                        nome.textContent = r.nome;
+                        item.appendChild(nome);
+
+                        const desc = document.createElement('div');
+                        desc.className = 'text-base text-slate-400 leading-tight';
+                        desc.textContent = r.desc;
+                        item.appendChild(desc);
+
+                        redesSection.appendChild(item);
+                    });
+
+                    servicosContainer.appendChild(redesSection);
+                }
+
+                content.appendChild(servicosContainer);
+                card.appendChild(content);
+                container.appendChild(card);
+            });
+        }
+
         // Update footer year
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
@@ -628,6 +741,9 @@
                 icon.classList.add('open');
             }
         }
+
+        // Renderizar serviços ao carregar a página
+        document.addEventListener('DOMContentLoaded', renderServiços);
     </script>
 
 </body>
