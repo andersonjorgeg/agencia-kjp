@@ -512,7 +512,7 @@
             servicosData.forEach(servico => {
                 const card = document.createElement('div');
                 // Adicionamos 'reveal-item' para o card animar ao aparecer pelo script.js
-                card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px] reveal-item';
+                card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px] reveal reveal-item';
 
                 // Imagem de background
                 const imagemDiv = document.createElement('div');
@@ -547,7 +547,7 @@
 
                 // Grid de Serviços e Redes
                 const servicosContainer = document.createElement('div');
-                servicosContainer.className = 'grid gap-4 overflow-y-auto';
+                servicosContainer.className = 'grid gap-4';
 
                 // Serviços incluídos
                 if (servico.servicos && servico.servicos.length > 0) {
