@@ -604,10 +604,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .inset-0 {
   inset: 0px;
 }
@@ -709,6 +705,10 @@ video {
   margin-top: 4rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -761,8 +761,8 @@ video {
   min-height: 500px;
 }
 
-.min-h-\[85vh\] {
-  min-height: 85vh;
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-16 {
@@ -978,10 +978,6 @@ video {
   background-color: rgb(15 15 15 / 0.8);
 }
 
-.bg-background-dark\/85 {
-  background-color: rgb(15 15 15 / 0.85);
-}
-
 .bg-background-dark\/90 {
   background-color: rgb(15 15 15 / 0.9);
 }
@@ -1114,6 +1110,10 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .pt-8 {
@@ -1274,18 +1274,6 @@ video {
 
 .text-white\/70 {
   color: rgb(255 255 255 / 0.7);
-}
-
-.text-white\/80 {
-  color: rgb(255 255 255 / 0.8);
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.underline-offset-4 {
-  text-underline-offset: 4px;
 }
 
 .antialiased {
@@ -1876,6 +1864,11 @@ html {
   color: rgb(30 144 255 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-primary-mkt:hover {
+  --tw-text-opacity: 1;
+  color: rgb(50 205 50 / var(--tw-text-opacity, 1));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -1987,11 +1980,6 @@ html {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  .md\:px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
   }
 
   .md\:px-6 {

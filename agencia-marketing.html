@@ -20,45 +20,77 @@
 
 <body class="overflow-x-hidden antialiased bg-background-dark text-white font-display">
 
-    <!-- Top Navigation -->
-    <header
-        class="sticky top-0 z-50 w-full border-b border-white/10 backdrop-blur-md px-6 md:px-20 py-4 bg-background-dark/85">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Top Navigation Bar (Fixo igual da Produção) -->
+    <header class="fixed top-0 z-50 w-full bg-background-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="material-icons text-3xl text-primary-mkt">rocket_launch</span>
-                <h2 class="text-white text-xl font-extrabold tracking-tight hidden md:block">KJP <span
+                <span class="material-icons text-primary-mkt text-3xl">rocket_launch</span>
+                <h2 class="text-xl font-bold tracking-tight hidden md:block">KJP <span
                         class="text-primary-mkt">PRODUÇÕES &amp; AGÊNCIA</span></h2>
             </div>
             <nav class="hidden md:flex items-center gap-8">
-                <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
-                    href="index.html">Home</a>
-                <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
-                    href="producao-musical.html">Produção</a>
-                <a class="text-sm font-semibold transition-colors underline underline-offset-4 text-primary-mkt"
-                    href="#">Marketing</a>
-                <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
-                    href="index.html#quem-somos">Sobre</a>
-                <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
-                    href="index.html#contato">Contato</a>
+                <a class="text-sm font-medium hover:text-primary-mkt transition-colors"
+                    href="#diferenciais">Diferenciais</a>
+                <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#servicos">Serviços</a>
+                <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#processo">Processo</a>
+                <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#faq">FAQ</a>
+                <a class="text-sm font-medium hover:text-primary-mkt transition-colors" href="#contato">Contato</a>
             </nav>
-            <button onclick="window.location.href='index.html'"
-                class="bg-primary-mkt text-background-dark px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all hover:brightness-110">
-                Voltar para KJP
-            </button>
+
+            <div class="flex items-center gap-2">
+                <button onclick="window.location.href='index.html'"
+                    class="bg-primary-mkt text-background-dark px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold hover:brightness-110 transition-all">
+                    Voltar para KJP
+                </button>
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 flex items-center justify-center">
+                    <span class="material-icons text-3xl">menu</span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-background-dark/95 backdrop-blur-xl transition-all duration-500 opacity-0 pointer-events-none translate-x-full md:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between px-4 h-20 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <span class="material-icons text-primary-mkt text-3xl">rocket_launch</span>
+                    <span class="text-xl font-bold">KJP PRODUTORA & AGÊNCIA</span>
+                </div>
+                <button id="mobile-menu-close" class="text-white p-2">
+                    <span class="material-icons text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6 p-8">
+                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors"
+                    href="#diferenciais">Diferenciais</a>
+                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#servicos">Serviços</a>
+                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#processo">Processo</a>
+                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#faq">FAQ</a>
+                <a class="text-2xl font-bold hover:text-primary-mkt transition-colors" href="#contato">Contato</a>
+                <div class="mt-10">
+                    <button onclick="window.location.href='index.html'"
+                        class="w-full bg-primary-mkt text-background-dark py-4 rounded-xl text-lg font-bold hover:brightness-110">
+                        Voltar para KJP
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <main class="w-full">
 
         <!-- Section 1: Hero -->
-        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <div class="absolute inset-0 z-0 bg-gradient-to-br from-background-dark to-neutral-dark">
                 <div class="absolute inset-0 bg-fume z-10"></div>
                 <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg"
                     alt="Ambiente de agência de marketing com gráficos de métricas e estratégia"
                     onerror="this.classList.add('hidden');">
             </div>
-            <div class="relative z-20 max-w-4xl px-6 text-center">
+            <div class="relative z-20 max-w-4xl px-6 text-center mt-5">
                 <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
                     Marketing Digital para Empresas que <span class="text-primary-mkt">Querem Crescer</span>
                 </h1>
@@ -71,7 +103,7 @@
                         class="bg-primary-mkt text-white font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 hover:opacity-80">
                         <span class="material-icons">call</span> Falar no WhatsApp
                     </a>
-                    <a href="index.html#contato"
+                    <a href="#contato"
                         class="bg-primary-mkt text-white font-bold py-4 px-8 rounded-lg transition-transform hover:scale-105 hover:opacity-80 text-center">
                         Solicitar diagnóstico
                     </a>
@@ -80,7 +112,7 @@
         </section>
 
         <!-- Section 2: Diferenciais -->
-        <section class="relative py-24">
+        <section id="diferenciais" class="relative py-24">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 z-10 bg-background-dark/90"></div>
                 <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg" alt="Fundo estratégia"
@@ -130,7 +162,7 @@
         </section>
 
         <!-- Section 3: Serviços Principais -->
-        <section class="py-24 bg-background-dark">
+        <section id="servicos" class="py-24 bg-background-dark">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-16">
                     <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4">Portfólio de Soluções
@@ -220,7 +252,7 @@
         </section>
 
         <!-- Section 6: Processo -->
-        <section class="py-24 bg-background-dark">
+        <section id="processo" class="py-24 bg-background-dark">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Nosso <span
                         class="text-primary-mkt">Processo</span> de Trabalho</h2>
@@ -264,7 +296,7 @@
         </section>
 
         <!-- Section 7: FAQ -->
-        <section class="py-24 bg-background-dark/50">
+        <section id="faq" class="py-24 bg-background-dark/50">
             <div class="max-w-3xl mx-auto px-6">
                 <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
                 <div class="space-y-4" id="faq-container">
@@ -351,7 +383,7 @@
         </section>
 
         <!-- Section 8: Final CTA -->
-        <section class="py-24 text-center bg-background-dark">
+        <section id="contato" class="py-24 text-center bg-background-dark">
             <div class="max-w-3xl mx-auto px-6">
                 <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para crescer com marketing digital
                     profissional?
@@ -363,11 +395,11 @@
                         class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg flex items-center justify-center gap-3 transition-all hover:opacity-80 hover:shadow-[0_0_20px_rgba(50,205,50,0.4)]">
                         <span class="material-icons">chat</span> Falar no WhatsApp
                     </a>
-                    <a href="index.html#contato"
+                    <a href="#contato"
                         class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
                         Solicitar diagnóstico
                     </a>
-                    <a href="index.html#contato"
+                    <a href="#contato"
                         class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
                         Falar com especialista
                     </a>
@@ -411,6 +443,27 @@
     </a>
 
     <script>
+        // ====== LÓGICA DO MENU MOBILE ======
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        function openMenu() {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+            document.body.style.overflow = 'hidden'; // Evita rolagem da página quando o menu estiver aberto
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+            document.body.style.overflow = ''; // Restaura a rolagem da página
+        }
+
+        mobileMenuToggle.addEventListener('click', openMenu);
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileMenuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+
         // ====== DADOS DOS SERVIÇOS ======
         const servicosData = [
             {
