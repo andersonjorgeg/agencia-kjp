@@ -101,6 +101,32 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// ===== AUTO-ANIMATE CARDS WHEN SERVICOS SECTION ENTERS VIEWPORT =====
+const servicosSection = document.getElementById('servicos');
+if (servicosSection) {
+    const servicosObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Quando a seção de serviços entra no viewport, anima todos os cards
+                const cards = entry.target.querySelectorAll('.reveal-item');
+                cards.forEach((card, index) => {
+                    // Pequeno delay entre cada card para efeito em cascata
+                    setTimeout(() => {
+                        card.classList.add('active');
+                    }, index * 100);
+                });
+                // Desativa o observer após animar (opcional)
+                servicosObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Dispara quando 10% da seção fica visível
+        rootMargin: '0px'
+    });
+
+    servicosObserver.observe(servicosSection);
+}
+
 // Statistics Counter Animation (Improved)
 const statsSection = document.querySelector('.stats-row') || document.querySelector('.reveal');
 const counters = document.querySelectorAll('.stat-number[data-target]');
