@@ -16,114 +16,25 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-    <!-- Custom styles for this page -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0F0F0F;
-            color: #FFFFFF;
-        }
-
-        .bg-fume {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
-        }
-
-        .bg-fume-light {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-        }
-
-        .bg-card-dark {
-            background-color: #1A1A1A;
-        }
-
-        .text-primary-mkt {
-            color: #32CD32;
-        }
-
-        .bg-primary-mkt {
-            background-color: #32CD32;
-        }
-
-        .border-primary-mkt {
-            border-color: #32CD32;
-        }
-
-        .hover-border-primary-mkt:hover {
-            border-color: #32CD32;
-        }
-
-        /* Card Grid Layout */
-        .card-content {
-            display: grid;
-            grid-template-rows: auto 1fr;
-            gap: 1rem;
-        }
-
-        .card-header {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .card-services {
-            display: grid;
-            gap: 1rem;
-            overflow-y: auto;
-        }
-
-        .service-item {
-            display: grid;
-            gap: 0.25rem;
-        }
-
-        .service-section {
-            display: grid;
-            gap: 0.75rem;
-        }
-
-        /* Accordion FAQ */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-        }
-
-        .faq-answer.open {
-            max-height: 300px;
-            padding-top: 0.75rem;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-icon.open {
-            transform: rotate(45deg);
-        }
-    </style>
 </head>
 
-<body class="overflow-x-hidden antialiased">
+<body class="overflow-x-hidden antialiased bg-background-dark text-white font-display">
 
     <!-- Top Navigation -->
-    <header class="sticky top-0 z-50 w-full border-b border-white/10 backdrop-blur-md px-6 md:px-20 py-4"
-        style="background-color: rgba(15,15,15,0.85);">
+    <header
+        class="sticky top-0 z-50 w-full border-b border-white/10 backdrop-blur-md px-6 md:px-20 py-4 bg-background-dark/85">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="material-icons text-3xl" style="color:#32CD32;">rocket_launch</span>
+                <span class="material-icons text-3xl text-primary-mkt">rocket_launch</span>
                 <h2 class="text-white text-xl font-extrabold tracking-tight hidden md:block">KJP <span
-                        style="color:#32CD32;">PRODUÇÕES &amp; AGÊNCIA</span></h2>
+                        class="text-primary-mkt">PRODUÇÕES &amp; AGÊNCIA</span></h2>
             </div>
             <nav class="hidden md:flex items-center gap-8">
                 <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
                     href="index.html">Home</a>
                 <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
                     href="producao-musical.html">Produção</a>
-                <a class="text-sm font-semibold transition-colors underline underline-offset-4" style="color:#32CD32;"
+                <a class="text-sm font-semibold transition-colors underline underline-offset-4 text-primary-mkt"
                     href="#">Marketing</a>
                 <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors"
                     href="index.html#quem-somos">Sobre</a>
@@ -131,9 +42,7 @@
                     href="index.html#contato">Contato</a>
             </nav>
             <button onclick="window.location.href='index.html'"
-                class="text-white px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all"
-                style="background-color:#32CD32; color:#0F0F0F;" onmouseenter="this.style.filter='brightness(1.1)'"
-                onmouseleave="this.style.filter='brightness(1)'">
+                class="bg-primary-mkt text-background-dark px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all hover:brightness-110">
                 Voltar para KJP
             </button>
         </div>
@@ -143,15 +52,15 @@
 
         <!-- Section 1: Hero -->
         <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 z-0 bg-gradient-to-br from-background-dark to-neutral-dark">
                 <div class="absolute inset-0 bg-fume z-10"></div>
                 <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg"
                     alt="Ambiente de agência de marketing com gráficos de métricas e estratégia"
-                    onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0F0F0F 0%, #1a1a1a 100%)';">
+                    onerror="this.classList.add('hidden');">
             </div>
             <div class="relative z-20 max-w-4xl px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-                    Marketing Digital para Empresas que <span style="color:#32CD32;">Querem Crescer</span>
+                    Marketing Digital para Empresas que <span class="text-primary-mkt">Querem Crescer</span>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-300 italic font-medium mb-10 max-w-2xl mx-auto">
                     Estratégias de marketing digital, gestão de tráfego, presença online e desenvolvimento web para
@@ -159,13 +68,11 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://wa.me/5521968845732" target="_blank" rel="noopener"
-                        class="font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 hover:opacity-80 text-white"
-                        style="background-color:#32CD32;">
+                        class="bg-primary-mkt text-white font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105 hover:opacity-80">
                         <span class="material-icons">call</span> Falar no WhatsApp
                     </a>
                     <a href="index.html#contato"
-                        class="font-bold py-4 px-8 rounded-lg transition-transform hover:scale-105 hover:opacity-80 text-white text-center"
-                        style="background-color:#32CD32;">
+                        class="bg-primary-mkt text-white font-bold py-4 px-8 rounded-lg transition-transform hover:scale-105 hover:opacity-80 text-center">
                         Solicitar diagnóstico
                     </a>
                 </div>
@@ -175,51 +82,46 @@
         <!-- Section 2: Diferenciais -->
         <section class="relative py-24">
             <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 z-10" style="background-color: rgba(15,15,15,0.90);"></div>
+                <div class="absolute inset-0 z-10 bg-background-dark/90"></div>
                 <img class="w-full h-full object-cover" src="img/agencia-de-marketing.jpg" alt="Fundo estratégia"
-                    onerror="this.style.display='none';">
+                    onerror="this.classList.add('hidden');">
             </div>
             <div class="relative z-20 max-w-7xl mx-auto px-6">
-                <h2 class="text-sm font-bold uppercase tracking-widest mb-4" style="color:#32CD32;">Nossos Diferenciais
-                </h2>
+                <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4">Nossos Diferenciais</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">Por que escolher a KJP?</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                    <div class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group"
-                        style="--hover-border: #32CD32;" onmouseenter="this.style.borderColor='rgba(50,205,50,0.5)'"
-                        onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)'">
-                        <span class="material-icons text-4xl mb-4 block transition-transform group-hover:scale-110"
-                            style="color:#32CD32;">architecture</span>
+                    <div
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        <span
+                            class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">architecture</span>
                         <h4 class="text-xl font-bold text-white mb-2">Estratégias personalizadas</h4>
                         <p class="text-slate-400">Planejamento sob medida para o seu nicho e público-alvo específico.
                         </p>
                     </div>
 
-                    <div class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group"
-                        onmouseenter="this.style.borderColor='rgba(50,205,50,0.5)'"
-                        onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)'">
-                        <span class="material-icons text-4xl mb-4 block transition-transform group-hover:scale-110"
-                            style="color:#32CD32;">query_stats</span>
+                    <div
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        <span
+                            class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">query_stats</span>
                         <h4 class="text-xl font-bold text-white mb-2">Marketing orientado a resultados</h4>
                         <p class="text-slate-400">Foco total em ROI e conversão para maximizar cada centavo investido.
                         </p>
                     </div>
 
-                    <div class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group"
-                        onmouseenter="this.style.borderColor='rgba(50,205,50,0.5)'"
-                        onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)'">
-                        <span class="material-icons text-4xl mb-4 block transition-transform group-hover:scale-110"
-                            style="color:#32CD32;">trending_up</span>
+                    <div
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        <span
+                            class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">trending_up</span>
                         <h4 class="text-xl font-bold text-white mb-2">Crescimento sustentável</h4>
                         <p class="text-slate-400">Escalabilidade constante no digital com bases sólidas de dados.</p>
                     </div>
 
-                    <div class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group"
-                        onmouseenter="this.style.borderColor='rgba(50,205,50,0.5)'"
-                        onmouseleave="this.style.borderColor='rgba(255,255,255,0.05)'">
-                        <span class="material-icons text-4xl mb-4 block transition-transform group-hover:scale-110"
-                            style="color:#32CD32;">public</span>
-                        <h4 class="text-xl font-bold text-white mb-2">Soluções completas de presença online</h4>
+                    <div
+                        class="bg-card-dark border border-white/5 p-8 rounded-xl transition-colors group hover:border-primary-mkt/50">
+                        <span
+                            class="material-icons text-primary-mkt text-4xl mb-4 block transition-transform group-hover:scale-110">public</span>
+                        <h4 class="text-xl font-bold text-white mb-2">Soluções completas</h4>
                         <p class="text-slate-400">Cobertura de todos os pontos de contato digital da sua empresa.</p>
                     </div>
 
@@ -228,30 +130,30 @@
         </section>
 
         <!-- Section 3: Serviços Principais -->
-        <section class="py-24" style="background-color:#0F0F0F;">
+        <section class="py-24 bg-background-dark">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-16">
-                    <h2 class="text-sm font-bold uppercase tracking-widest mb-4" style="color:#32CD32;">Portfólio de
-                        Soluções</h2>
+                    <h2 class="text-primary-mkt text-sm font-bold uppercase tracking-widest mb-4">Portfólio de Soluções
+                    </h2>
                     <h3 class="text-3xl md:text-5xl font-bold text-white">SERVIÇOS <span
-                            style="color:#32CD32;">PRINCIPAIS</span></h3>
+                            class="text-primary-mkt">PRINCIPAIS</span></h3>
                 </div>
                 <div id="servicos-container" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
             </div>
         </section>
 
         <!-- Section 4: Serviços Complementares -->
-        <section class="py-24" style="background-color: rgba(15,15,15,0.5);">
+        <section class="py-24 bg-background-dark/50">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">SEO</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Otimização para melhorar o posicionamento do
                             site da empresa no Google.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">Produção de Cursos Online</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Desenvolvemos todo o processo de criação de
                             cursos digitais para profissionais que desejam transformar seu conhecimento em um produto
@@ -259,26 +161,26 @@
                             publicação do curso em plataformas de venda.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">Google Business Profile</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Criamos e otimizamos o perfil da empresa no
                             Google para que ela apareça nas pesquisas locais e no Google Maps quando clientes procuram
                             serviços na região.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">E-mail Marketing</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Campanhas estratégicas de relacionamento e
                             vendas para nutrir sua base de clientes.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">Cartão Virtual Digital</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Cartão digital com acesso rápido a contatos e
                             redes sociais para networking profissional.</p>
                     </div>
 
-                    <div class="bg-card-dark p-6 rounded-xl border-l-4" style="border-left-color:#32CD32;">
+                    <div class="bg-card-dark p-6 rounded-xl border-l-4 border-primary-mkt">
                         <h4 class="text-xl font-bold text-white mb-3">Otimização de Presença Digital</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">Melhoria da presença online da empresa em
                             todos os canais digitais disponíveis.</p>
@@ -298,63 +200,61 @@
             </div>
             <div
                 class="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-
                 <div class="text-center">
-                    <span class="material-icons text-5xl mb-4 block" style="color:#32CD32;">insights</span>
+                    <span class="material-icons text-5xl mb-4 block text-primary-mkt">insights</span>
                     <h5 class="text-white text-lg font-bold">Aumento da presença digital</h5>
                 </div>
-
                 <div class="text-center">
-                    <span class="material-icons text-5xl mb-4 block" style="color:#32CD32;">group_add</span>
+                    <span class="material-icons text-5xl mb-4 block text-primary-mkt">group_add</span>
                     <h5 class="text-white text-lg font-bold">Geração de novos clientes</h5>
                 </div>
-
                 <div class="text-center">
-                    <span class="material-icons text-5xl mb-4 block" style="color:#32CD32;">payments</span>
+                    <span class="material-icons text-5xl mb-4 block text-primary-mkt">payments</span>
                     <h5 class="text-white text-lg font-bold">Aumento das vendas</h5>
                 </div>
-
                 <div class="text-center">
-                    <span class="material-icons text-5xl mb-4 block" style="color:#32CD32;">verified</span>
+                    <span class="material-icons text-5xl mb-4 block text-primary-mkt">verified</span>
                     <h5 class="text-white text-lg font-bold">Fortalecimento da marca</h5>
                 </div>
-
             </div>
         </section>
 
         <!-- Section 6: Processo -->
-        <section class="py-24" style="background-color:#0F0F0F;">
+        <section class="py-24 bg-background-dark">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Nosso <span
-                        style="color:#32CD32;">Processo</span> de Trabalho</h2>
+                        class="text-primary-mkt">Processo</span> de Trabalho</h2>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-                    <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 z-0"
-                        style="background-color: rgba(50,205,50,0.2);"></div>
+                    <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 z-0 bg-primary-mkt/20"></div>
 
                     <div class="relative z-10 text-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6"
-                            style="background-color:#32CD32;">1</div>
+                        <div
+                            class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
+                            1</div>
                         <h4 class="text-xl font-bold text-white mb-2">Diagnóstico</h4>
                         <p class="text-slate-400 text-sm">Entendemos suas dores e objetivos.</p>
                     </div>
 
                     <div class="relative z-10 text-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6"
-                            style="background-color:#32CD32;">2</div>
+                        <div
+                            class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
+                            2</div>
                         <h4 class="text-xl font-bold text-white mb-2">Planejamento</h4>
                         <p class="text-slate-400 text-sm">Traçamos o caminho para o sucesso.</p>
                     </div>
 
                     <div class="relative z-10 text-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6"
-                            style="background-color:#32CD32;">3</div>
+                        <div
+                            class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
+                            3</div>
                         <h4 class="text-xl font-bold text-white mb-2">Execução</h4>
                         <p class="text-slate-400 text-sm">Colocamos a mão na massa com precisão.</p>
                     </div>
 
                     <div class="relative z-10 text-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6"
-                            style="background-color:#32CD32;">4</div>
+                        <div
+                            class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-2xl mx-auto mb-6 bg-primary-mkt">
+                            4</div>
                         <h4 class="text-xl font-bold text-white mb-2">Otimização</h4>
                         <p class="text-slate-400 text-sm">Análise constante para melhorar os KPIs.</p>
                     </div>
@@ -364,7 +264,7 @@
         </section>
 
         <!-- Section 7: FAQ -->
-        <section class="py-24" style="background-color: rgba(15,15,15,0.5);">
+        <section class="py-24 bg-background-dark/50">
             <div class="max-w-3xl mx-auto px-6">
                 <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
                 <div class="space-y-4" id="faq-container">
@@ -373,7 +273,7 @@
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">O que faz uma agência de marketing digital?</h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Uma agência de marketing digital ajuda empresas a crescer na internet através de estratégias
@@ -386,7 +286,7 @@
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Minha empresa precisa de marketing digital?</h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Se sua empresa deseja aumentar sua visibilidade, conquistar novos clientes e fortalecer sua
@@ -399,7 +299,7 @@
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Quanto custa contratar uma agência de marketing digital?
                             </h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Os valores variam de acordo com os serviços contratados e a necessidade de cada empresa.
@@ -412,7 +312,7 @@
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Quanto tempo leva para ver resultados no marketing digital?
                             </h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Algumas estratégias, como anúncios pagos, podem gerar resultados rapidamente. Já estratégias
@@ -425,7 +325,7 @@
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Vocês atendem qualquer tipo de empresa?</h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Sim. Atendemos empresas de diversos segmentos, profissionais autônomos e empreendedores que
@@ -437,7 +337,7 @@
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
                             <h4 class="text-white font-bold">Como posso contratar os serviços da agência?</h4>
-                            <span class="material-icons faq-icon" style="color:#32CD32;">add</span>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Você pode entrar em contato diretamente pelo botão de WhatsApp ou solicitar um diagnóstico
@@ -451,7 +351,7 @@
         </section>
 
         <!-- Section 8: Final CTA -->
-        <section class="py-24 text-center" style="background-color:#0F0F0F;">
+        <section class="py-24 text-center bg-background-dark">
             <div class="max-w-3xl mx-auto px-6">
                 <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para crescer com marketing digital
                     profissional?
@@ -460,20 +360,15 @@
                     acelerar seu crescimento.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://wa.me/5521968845732" target="_blank" rel="noopener"
-                        class="font-bold py-5 px-10 rounded-lg flex items-center justify-center gap-3 transition-all hover:opacity-80 text-white"
-                        style="background-color:#32CD32; box-shadow: none;"
-                        onmouseenter="this.style.boxShadow='0 0 20px rgba(50,205,50,0.4)'"
-                        onmouseleave="this.style.boxShadow='none'">
+                        class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg flex items-center justify-center gap-3 transition-all hover:opacity-80 hover:shadow-[0_0_20px_rgba(50,205,50,0.4)]">
                         <span class="material-icons">chat</span> Falar no WhatsApp
                     </a>
                     <a href="index.html#contato"
-                        class="font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-white text-center"
-                        style="background-color:#32CD32;">
+                        class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
                         Solicitar diagnóstico
                     </a>
                     <a href="index.html#contato"
-                        class="font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-white text-center"
-                        style="background-color:#32CD32;">
+                        class="bg-primary-mkt text-white font-bold py-5 px-10 rounded-lg transition-all hover:opacity-80 text-center">
                         Falar com especialista
                     </a>
                 </div>
@@ -483,10 +378,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 px-6" style="background-color:#0F0F0F;">
+    <footer class="border-t border-white/10 py-12 px-6 bg-background-dark">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
-                <span class="material-icons text-2xl" style="color:#32CD32;">rocket_launch</span>
+                <span class="material-icons text-2xl text-primary-mkt">rocket_launch</span>
                 <span class="text-white font-bold text-lg">KJP Produções &amp; Agência</span>
             </div>
             <div class="flex gap-6">
@@ -522,7 +417,6 @@
                 titulo: "CONSULTORIA E ESTRATÉGIA DE MARKETING",
                 descricao: "Analisamos o posicionamento digital da sua empresa e criamos estratégias personalizadas para fortalecer sua marca e aumentar sua presença na internet.",
                 imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-qXc4R69H90Wgz-_RHlYksOc9CxgLuxVQA6SHGBvHV6S6rSWQzx2z7788YvlvPM9syIa6KtGuSb75Me2KepjNvQA-dai92DQVHVdPa3iwf_LnDW1Uid_7YQFx95YO3DsBRZVLb0tKEyn0zO62WraDLub-QJybn88H8KTvRl5R4-Th3uhlawVUh5l04mVNDcOloYX_phZff_4ElANTzV3mENZqBGavJX_ZKJ2BfPCrjE5RYyNLpzKgLMHIcsj-xE4VSiMWaKAUHgh6",
-                alt: "Reunião de planejamento estratégico de marketing",
                 servicos: [
                     { nome: "Consultoria de Marketing Digital", desc: "orientação estratégica para presença online" },
                     { nome: "Análise de Marketing", desc: "avaliação da comunicação da empresa" },
@@ -535,7 +429,6 @@
                 titulo: "GESTÃO DE TRÁFEGO PAGO",
                 descricao: "Criamos e gerenciamos campanhas de anúncios online focadas em atrair novos clientes e aumentar as vendas da empresa.",
                 imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuCfkab-uITEraJ7zS9BRAMO25ng-avFs44WniHIdWV9i8elT4b1Ye7dhkH_YnMmSrgr6CDooAoBerluIby1XW2BBmUl4QbSPPaf7OSkIXkFK_NnHBVwpZldSRVepmFXij7jZ5pOBG3hyP9rLchzGaVJQo-vYMe1eUcaZ2N1KzmFDW67HqSlWJPvR8Y0drmtV28S6-Jjgvqi734rVoJVXjYqqG5WvPImHLyTNHw9oEl5kzx2oGxY5I7hwFmIf_hMy0E7D7_y4N_nCiOD",
-                alt: "Dashboard de anúncios digitais com métricas altas",
                 servicos: [
                     { nome: "Gestão de Tráfego Pago", desc: "criação e gerenciamento de campanhas" },
                     { nome: "Gestão de Anúncios Online", desc: "configuração e otimização de anúncios" },
@@ -549,7 +442,6 @@
                 titulo: "GESTÃO DE REDES SOCIAIS",
                 descricao: "Gerenciamos redes sociais com planejamento estratégico, produção de conteúdo e captação de vídeos para fortalecer a presença digital da empresa.",
                 imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuDXvvjNKXHylQ4x5Cml771_--Jz9OHrvxVxPQKXsW35JPyDjI3Z2Bc2ce9gyvy3SAVrVUKSBWOvIfVtYPFeWJ3iuTeGKprcebvIRuizrcaiDpdkY6S0ZJEPnTTFHtuMELPoe4NBPDjlyjyD-3_APo6lx-kT1eTwSEA-DPXdB6c9q6g1o0pPc_Rmr7D8f19k0AqpiK7WOr1VezpGUicJIBACiio-Y6c-1xSTckxM75t9Sxnd045Aze6-Hzka5rn2_Hr4Gh62N6ZNluRA",
-                alt: "Criação de conteúdo para redes sociais",
                 servicos: [
                     { nome: "Gestão de Redes Sociais", desc: "administração profissional" },
                     { nome: "Planejamento de Conteúdo", desc: "organização estratégica" },
@@ -569,7 +461,6 @@
                 titulo: "DESENVOLVIMENTO WEB",
                 descricao: "Criamos sites profissionais e páginas digitais que ajudam empresas a se posicionar na internet e conquistar novos clientes.",
                 imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuABfRdCbKO62DOx6uVXlVWkaBW0PBN2I7zsNM1jBX08Xmu92dQya9Bd5ZNe5gyNTB_L-Jwpean1KAjHQzEZ96CxkLR3sb3K5vqFF2fuKhsHFGLxIf3CXXM0ZFfTjPpE1K6sCXFotAKKajoCanjI9Nc628-4d7dudMNGTdbiu_9rWOQ7WKj4a31gGNoFDxjxmCl20vBRP3_e9nPCdLvnv3T46VhKXEGqoQDXOXtoye-SsZpaDYrezWmjBdWRdD9Shoh1g8TV7Esq_KvW",
-                alt: "Desenvolvimento web profissional",
                 servicos: [
                     { nome: "Criação de Sites Institucionais", desc: "site profissional para apresentação da empresa" },
                     { nome: "Criação de Landing Pages", desc: "páginas focadas em geração de leads" },
@@ -583,7 +474,6 @@
                 titulo: "BRANDING E CRIAÇÃO",
                 descricao: "Criamos identidades visuais e materiais de comunicação que fortalecem a marca e transmitem profissionalismo.",
                 imagem: "https://lh3.googleusercontent.com/aida-public/AB6AXuDwMoqnvACuO2uqkAaqe_CAeaTS8f1FjpgjB_bVkSiOGRzJRY_4VB7ZhvvlJhA3jif1S8seOPBWlfnu57PPf41_cWpkpbOEFTbYk5jGUuiwe0Kb0LITmBF_CY_lLHMfq7s-5Gj8Cdwy_LQEb_8lNKDdLMsIpoSTPGN54mPfoaiBV7v5-aCA6UrfuCM881mHYKL1fIuoOZljRlUVHIRgJVKTSXqaafQtjH4bNy9ckXZxHVBlQdn5BDvCiEnZWqjWN3EbcRwEfHOyY0",
-                alt: "Processo criativo de branding e identidade visual",
                 servicos: [
                     { nome: "Criação de Identidade Visual", desc: "definição visual completa da marca" },
                     { nome: "Design de Logotipo", desc: "criação profissional de logomarca" },
@@ -594,22 +484,18 @@
             }
         ];
 
-        // ====== FUNÇÃO PARA RENDERIZAR CARDS ======
+        // ====== FUNÇÃO PARA RENDERIZAR CARDS (Refatorado com Tailwind) ======
         function renderServiços() {
             const container = document.getElementById('servicos-container');
 
             servicosData.forEach(servico => {
                 const card = document.createElement('div');
-                card.className = `relative group rounded-2xl overflow-hidden`;
-                // Sem altura fixa - altura dinâmica baseada no conteúdo
-                card.style.minHeight = '450px'; // Altura mínima para visual agradável
+                card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px]';
+
                 // Imagem de background
                 const imagemDiv = document.createElement('div');
-                imagemDiv.className = 'absolute inset-0';
+                imagemDiv.className = 'absolute inset-0 bg-cover bg-center z-0';
                 imagemDiv.style.backgroundImage = `url('${servico.imagem}')`;
-                imagemDiv.style.backgroundSize = 'cover';
-                imagemDiv.style.backgroundPosition = 'center';
-                imagemDiv.style.zIndex = '0';
                 card.appendChild(imagemDiv);
 
                 // Overlay
@@ -617,18 +503,13 @@
                 overlay.className = 'absolute inset-0 bg-fume group-hover:bg-black/40 transition-all duration-500 z-10';
                 card.appendChild(overlay);
 
-                // Conteúdo
+                // Conteúdo Principal
                 const content = document.createElement('div');
-                content.className = 'relative z-20 h-full px-6 py-8 md:px-12 md:py-10';
-                content.style.display = 'grid';
-                content.style.gridTemplateRows = 'auto auto';
-                content.style.gap = '1rem';
-                content.style.alignContent = 'start';
+                content.className = 'relative z-20 h-full px-6 py-8 md:px-12 md:py-10 grid grid-rows-[auto_1fr] gap-4 content-start';
 
                 // Header do card
                 const header = document.createElement('div');
-                header.style.display = 'grid';
-                header.style.gap = '1rem';
+                header.className = 'grid gap-4';
 
                 const titulo = document.createElement('h4');
                 titulo.className = 'text-2xl font-bold text-white uppercase';
@@ -642,32 +523,26 @@
 
                 content.appendChild(header);
 
-                // Serviços
+                // Grid de Serviços e Redes
                 const servicosContainer = document.createElement('div');
-                servicosContainer.style.display = 'grid';
-                servicosContainer.style.gap = '1rem';
-                servicosContainer.style.overflowY = 'auto';
+                servicosContainer.className = 'grid gap-4 overflow-y-auto';
 
                 // Serviços incluídos
                 if (servico.servicos && servico.servicos.length > 0) {
                     const servicosSection = document.createElement('div');
-                    servicosSection.style.display = 'grid';
-                    servicosSection.style.gap = '0.75rem';
+                    servicosSection.className = 'grid gap-3';
 
                     const servicosTitulo = document.createElement('div');
-                    servicosTitulo.className = 'text-sm font-bold uppercase tracking-wider';
-                    servicosTitulo.style.color = '#32CD32';
+                    servicosTitulo.className = 'text-sm font-bold uppercase tracking-wider text-primary-mkt';
                     servicosTitulo.textContent = 'Serviços incluídos:';
                     servicosSection.appendChild(servicosTitulo);
 
                     servico.servicos.forEach(s => {
                         const item = document.createElement('div');
-                        item.style.display = 'grid';
-                        item.style.gap = '0.25rem';
+                        item.className = 'grid gap-1';
 
                         const nome = document.createElement('div');
-                        nome.className = 'font-semibold text-xl';
-                        nome.style.color = '#ffffff';
+                        nome.className = 'font-semibold text-xl text-white';
                         nome.textContent = s.nome;
                         item.appendChild(nome);
 
@@ -685,23 +560,19 @@
                 // Redes sociais (se houver)
                 if (servico.redes && servico.redes.length > 0) {
                     const redesSection = document.createElement('div');
-                    redesSection.style.display = 'grid';
-                    redesSection.style.gap = '0.75rem';
+                    redesSection.className = 'grid gap-3';
 
                     const redesTitulo = document.createElement('div');
-                    redesTitulo.className = 'text-sm font-bold uppercase tracking-wider';
-                    redesTitulo.style.color = '#32CD32';
+                    redesTitulo.className = 'text-sm font-bold uppercase tracking-wider text-primary-mkt';
                     redesTitulo.textContent = 'Redes sociais:';
                     redesSection.appendChild(redesTitulo);
 
                     servico.redes.forEach(r => {
                         const item = document.createElement('div');
-                        item.style.display = 'grid';
-                        item.style.gap = '0.25rem';
+                        item.className = 'grid gap-1';
 
                         const nome = document.createElement('div');
-                        nome.className = 'font-semibold text-xl';
-                        nome.style.color = '#ffffff';
+                        nome.className = 'font-semibold text-xl text-white';
                         nome.textContent = r.nome;
                         item.appendChild(nome);
 

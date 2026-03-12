@@ -299,3 +299,32 @@ html {
 .reveal.active .reveal-item:nth-child(3) {
     transition-delay: 0.3s;
 }
+
+/* --- Agência Marketing Utilities --- */
+.bg-fume {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+}
+
+.bg-fume-light {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+.bg-card-dark {
+    @apply bg-[#1A1A1A];
+}
+
+.faq-answer {
+    @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.faq-answer.open {
+    @apply max-h-[300px] pt-3;
+}
+
+.faq-icon {
+    @apply transition-transform duration-300 ease-in-out;
+}
+
+.faq-icon.open {
+    @apply rotate-45;
+}

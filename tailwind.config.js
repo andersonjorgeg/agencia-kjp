@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             colors: {
                 'primary': '#1E90FF',
+                'primary-mkt': '#32CD32', // <-- Cor verde do marketing adicionada
                 'background-light': '#f8f8f5',
                 'background-dark': '#0F0F0F',
                 'neutral-dark': '#1a1a1a',
