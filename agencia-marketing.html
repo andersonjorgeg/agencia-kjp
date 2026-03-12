@@ -648,7 +648,53 @@
                     const newElements = document.querySelectorAll('#servicos-container .reveal-item');
                     newElements.forEach(el => revealObserver.observe(el));
                 }
+
+                // ===== FORÇA A ANIMAÇÃO DOS CARDS SE A SEÇÃO ESTIVER VISÍVEL =====
+                const servicosSection = document.getElementById('servicos');
+                const rect = servicosSection.getBoundingClientRect();
+
+                // Se a seção está visível no viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const cards = document.querySelectorAll('#servicos-container .reveal-item');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('active');
+                        }, index * 100);
+                    });
+                }
             }, 100);
+        });
+
+        // ===== OBSERVER PARA ANIMAR CARDS QUANDO SEÇÃO ENTRA NO VIEWPORT =====
+        window.addEventListener('load', () => {
+            const servicosSection = document.getElementById('servicos');
+            if (servicosSection) {
+                const servicosAutoAnimateObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Anima cards se ainda não foram animados
+                            const cards = entry.target.querySelectorAll('#servicos-container .reveal-item');
+                            const hasUnanimatedCards = Array.from(cards).some(card => !card.classList.contains('active'));
+
+                            if (hasUnanimatedCards) {
+                                cards.forEach((card, index) => {
+                                    if (!card.classList.contains('active')) {
+                                        setTimeout(() => {
+                                            card.classList.add('active');
+                                        }, index * 100);
+                                    }
+                                });
+                            }
+                            servicosAutoAnimateObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.05,
+                    rootMargin: '0px'
+                });
+
+                servicosAutoAnimateObserver.observe(servicosSection);
+            }
         });
     </script>
 </body>
