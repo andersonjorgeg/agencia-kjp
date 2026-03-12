@@ -76,14 +76,11 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-
-            // 🔍 DEBUG: Verificar se .active foi adicionado
-            console.log('✅ .active adicionado a:', entry.target.id || entry.target.className);
-            console.log('   Classes agora:', entry.target.className);
-
-            // Checar se há .reveal-item dentro
-            const revealItems = entry.target.querySelectorAll('.reveal-item');
-            console.log('   .reveal-item encontrados dentro:', revealItems.length);
+            // Once revealed, we can unobserve if we want it to stay permanent
+            // revealObserver.unobserve(entry.target);
+        } else {
+            // Optional: remove class when out of view for re-animation
+            // entry.target.classList.remove('active');
         }
     });
 }, {
@@ -215,7 +212,6 @@ const handleFormSubmit = async (e) => {
             throw new Error('Erro na resposta do servidor');
         }
     } catch (error) {
-        console.error('Erro ao enviar formulário:', error);
 
         if (error.message.includes('Muitas tentativas')) {
             submitBtn.innerText = 'Muitas tentativas';
