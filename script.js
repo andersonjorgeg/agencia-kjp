@@ -45,6 +45,30 @@ mobileMenuLinks?.forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
+// ===== SMOOTH SCROLL PARA ÂNCORAS COM OFFSET DO HEADER =====
+// Isso garante que quando você clica em "Serviços", a seção fica visível corretamente
+document.addEventListener('click', (e) => {
+    // Se clicou em um link com âncora
+    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+        const href = e.target.getAttribute('href');
+        const targetElement = document.querySelector(href);
+
+        if (targetElement) {
+            e.preventDefault();
+
+            // Header tem altura de 80px (h-20 = 5rem = 80px)
+            const headerHeight = 80;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            // Scroll suave
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
+
 // Premium Reveal Animations (Intersection Observer)
 const revealElements = document.querySelectorAll('.reveal');
 
@@ -52,11 +76,14 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // Once revealed, we can unobserve if we want it to stay permanent
-            // revealObserver.unobserve(entry.target);
-        } else {
-            // Optional: remove class when out of view for re-animation
-            // entry.target.classList.remove('active');
+
+            // 🔍 DEBUG: Verificar se .active foi adicionado
+            console.log('✅ .active adicionado a:', entry.target.id || entry.target.className);
+            console.log('   Classes agora:', entry.target.className);
+
+            // Checar se há .reveal-item dentro
+            const revealItems = entry.target.querySelectorAll('.reveal-item');
+            console.log('   .reveal-item encontrados dentro:', revealItems.length);
         }
     });
 }, {

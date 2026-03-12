@@ -246,6 +246,12 @@ html {
     transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+/* ✅ REGRA ADICIONADA: Para cards que recebem .active diretamente */
+.reveal-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .reveal.active .reveal-item {
     opacity: 1;
     transform: translateY(0);

@@ -517,12 +517,20 @@
 
         // ====== FUNÇÃO PARA RENDERIZAR CARDS ======
         function renderServiços() {
+            console.log('🎯 INICIANDO renderServiços()');
             const container = document.getElementById('servicos-container');
+            console.log('📦 Container encontrado?', !!container);
+
+            if (!container) {
+                console.error('❌ ERRO: servicos-container não encontrado!');
+                return;
+            }
 
             servicosData.forEach(servico => {
                 const card = document.createElement('div');
                 // Adicionamos 'reveal-item' para o card animar ao aparecer pelo script.js
                 card.className = 'relative group rounded-2xl overflow-hidden min-h-[450px] reveal reveal-item';
+                console.log('🃏 Card criado com classes:', card.className);
 
                 // Imagem de background
                 const imagemDiv = document.createElement('div');
@@ -650,47 +658,113 @@
 
         // Renderizar serviços e disparar observadores do script.js nos itens novos
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('📄 DOMContentLoaded disparado');
             renderServiços();
+            console.log('✅ renderServiços() executado');
 
             // Depois de renderizar via JS, precisamos avisar o IntersectionObserver global do script.js
             setTimeout(() => {
+                console.log('⏱️ setTimeout após render (100ms)');
+
                 if (typeof revealObserver !== 'undefined') {
                     const newElements = document.querySelectorAll('#servicos-container .reveal-item');
+                    console.log('👁️ Elements found para observar:', newElements.length);
                     newElements.forEach(el => revealObserver.observe(el));
                 }
 
                 // ===== FORÇA A ANIMAÇÃO DOS CARDS SE A SEÇÃO ESTIVER VISÍVEL =====
                 const servicosSection = document.getElementById('servicos');
+                console.log('🔍 servicosSection encontrada?', !!servicosSection);
+
+                if (!servicosSection) {
+                    console.error('❌ ERRO: Seção #servicos não encontrada!');
+                    return;
+                }
+
                 const rect = servicosSection.getBoundingClientRect();
+                console.log('📍 Viewport Check - top:', rect.top, 'bottom:', rect.bottom, 'innerHeight:', window.innerHeight);
+                console.log('✓ Seção visível?', rect.top < window.innerHeight && rect.bottom > 0);
 
                 // Se a seção está visível no viewport
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    console.log('🎬 Seção VISÍVEL! Iniciando animação dos cards...');
                     const cards = document.querySelectorAll('#servicos-container .reveal-item');
+                    console.log('🃏 Cards encontrados para animar:', cards.length);
+
+                    // 🎨 DEBUG: Verificar estilos ANTES de adicionar .active
+                    if (cards.length > 0) {
+                        const firstCard = cards[0];
+                        const beforeStyle = window.getComputedStyle(firstCard);
+                        console.log(`🎨 ANTES de .active - Card 0:`, {
+                            'opacity': beforeStyle.opacity,
+                            'transform': beforeStyle.transform,
+                            'transition': beforeStyle.transition,
+                            'classes': Array.from(firstCard.classList).join(', ')
+                        });
+                    }
+
                     cards.forEach((card, index) => {
                         setTimeout(() => {
+                            console.log(`➕ Adicionando classe "active" ao card ${index}`);
                             card.classList.add('active');
+                            console.log(`✔️ Card ${index} tem classe active?`, card.classList.contains('active'));
+
+                            // 🎨 DEBUG CSS: Verificar os estilos computados
+                            const computedStyle = window.getComputedStyle(card);
+                            console.log(`🎨 Card ${index} - CSS computado:`, {
+                                'opacity': computedStyle.opacity,
+                                'transform': computedStyle.transform,
+                                'transition': computedStyle.transition,
+                                'display': computedStyle.display,
+                                'visibility': computedStyle.visibility
+                            });
+
+                            // Verificar quais classes o card tem
+                            console.log(`📋 Card ${index} - Classes:`, Array.from(card.classList).join(', '));
                         }, index * 100);
                     });
+                } else {
+                    console.log('⚠️ Seção NÃO está visível. Aguardando scroll/navegação...');
                 }
             }, 100);
         });
 
         // ===== OBSERVER PARA ANIMAR CARDS QUANDO SEÇÃO ENTRA NO VIEWPORT =====
         window.addEventListener('load', () => {
+            console.log('🔄 Window LOAD disparado');
             const servicosSection = document.getElementById('servicos');
+            console.log('🔍 servicosSection encontrada no LOAD?', !!servicosSection);
+
             if (servicosSection) {
                 const servicosAutoAnimateObserver = new IntersectionObserver((entries) => {
+                    console.log('👀 IntersectionObserver disparado, entries:', entries.length);
+
                     entries.forEach(entry => {
+                        console.log('📌 Entry isIntersecting?', entry.isIntersecting);
+
                         if (entry.isIntersecting) {
+                            console.log('✨ Seção agora visível! Procurando cards...');
                             // Anima cards se ainda não foram animados
                             const cards = entry.target.querySelectorAll('#servicos-container .reveal-item');
+                            console.log('🃏 Cards encontrados pelo observer:', cards.length);
                             const hasUnanimatedCards = Array.from(cards).some(card => !card.classList.contains('active'));
+                            console.log('❓ Tem cards não animados?', hasUnanimatedCards);
 
                             if (hasUnanimatedCards) {
                                 cards.forEach((card, index) => {
                                     if (!card.classList.contains('active')) {
                                         setTimeout(() => {
+                                            console.log(`➕ Adicionando "active" ao card ${index} via observer`);
                                             card.classList.add('active');
+
+                                            // 🎨 DEBUG CSS: Verificar os estilos computados
+                                            const computedStyle = window.getComputedStyle(card);
+                                            console.log(`🎨 Card ${index} (observer) - CSS computado:`, {
+                                                'opacity': computedStyle.opacity,
+                                                'transform': computedStyle.transform,
+                                                'transition': computedStyle.transition,
+                                                'classes': Array.from(card.classList).join(', ')
+                                            });
                                         }, index * 100);
                                     }
                                 });
@@ -704,6 +778,7 @@
                 });
 
                 servicosAutoAnimateObserver.observe(servicosSection);
+                console.log('👁️ Observer registrado para seção #servicos');
             }
         });
     </script>
