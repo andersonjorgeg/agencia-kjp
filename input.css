@@ -334,3 +334,7 @@ html {
 .faq-icon.open {
     @apply rotate-45;
 }
+
+.card-start {
+    align-content: start;
+}
