@@ -319,20 +319,28 @@ html {
     @apply bg-[#1A1A1A];
 }
 
+/* ===== FAQ STYLES ===== */
 .faq-answer {
-    @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0;
 }
 
-.faq-answer.open {
-    @apply max-h-[300px] pt-3;
+.faq-answer.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 12px 0;
 }
 
 .faq-icon {
     @apply transition-transform duration-300 ease-in-out;
+    transform: rotate(0deg);
 }
 
-.faq-icon.open {
-    @apply rotate-45;
+.faq-icon.rotated {
+    transform: rotate(90deg);
 }
 
 .card-start {

@@ -16,6 +16,27 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <!-- FAQ Animation Styles -->
+    <style>
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0 0 0 0;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            opacity: 1;
+            padding: 12px 0 0 0;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="overflow-x-hidden antialiased bg-background-dark text-white font-display">
@@ -625,13 +646,40 @@
                     <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
                         <div class="flex justify-between items-center cursor-pointer faq-trigger"
                             onclick="toggleFaq(this)">
-                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados?</h4>
+                            <h4 class="text-white font-bold">Quanto tempo leva para ver resultados no marketing digital?
+                            </h4>
                             <span class="material-icons faq-icon text-primary-mkt">add</span>
                         </div>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Algumas estratégias, como anúncios pagos, podem gerar resultados rapidamente. Já estratégias
                             como posicionamento digital e crescimento orgânico costumam apresentar resultados
                             consistentes ao longo dos meses.
+                        </div>
+                    </div>
+
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
+                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
+                            onclick="toggleFaq(this)">
+                            <h4 class="text-white font-bold">Vocês atendem qualquer tipo de empresa?</h4>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
+                        </div>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Sim. Atendemos empresas de diversos segmentos, profissionais autônomos e empreendedores que
+                            desejam
+                            fortalecer sua presença digital e atrair novos clientes.
+                        </div>
+                    </div>
+
+                    <div class="bg-card-dark rounded-lg p-5 border border-white/5 reveal-item">
+                        <div class="flex justify-between items-center cursor-pointer faq-trigger"
+                            onclick="toggleFaq(this)">
+                            <h4 class="text-white font-bold">Como posso contratar os serviços da agência?</h4>
+                            <span class="material-icons faq-icon text-primary-mkt">add</span>
+                        </div>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Você pode entrar em contato diretamente pelo botão de WhatsApp ou solicitar um diagnóstico
+                            para que
+                            possamos analisar sua empresa e apresentar a melhor estratégia de marketing digital.
                         </div>
                     </div>
 
@@ -694,10 +742,9 @@
         </svg>
     </a>
 
-    <!-- INCLUIR O ARQUIVO SCRIPT.JS PARA QUE AS ANIMAÇÕES FUNCIONEM -->
+    <!-- Script -->
     <script src="./script.js" defer></script>
 
-    <!-- Seu script.js é o único script necessário -->
 </body>
 
 </html>

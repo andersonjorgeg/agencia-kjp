@@ -288,6 +288,37 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
+// ===== FAQ TOGGLE FUNCTION (Accordion Exclusivo com Rotação) =====
+const toggleFaq = (trigger) => {
+    const faqContainer = document.getElementById('faq-container');
+    const allTriggers = faqContainer.querySelectorAll('.faq-trigger');
+    const currentAnswer = trigger.nextElementSibling;
+    const currentIcon = trigger.querySelector('.faq-icon');
+    const isCurrentlyOpen = currentAnswer.classList.contains('active');
+
+    // Fechar todas as outras FAQs
+    allTriggers.forEach(t => {
+        if (t !== trigger) {
+            const answer = t.nextElementSibling;
+            const icon = t.querySelector('.faq-icon');
+            answer.classList.remove('active');
+            icon.classList.remove('rotated');
+            icon.textContent = 'add';
+        }
+    });
+
+    // Toggle a FAQ atual
+    if (isCurrentlyOpen) {
+        currentAnswer.classList.remove('active');
+        currentIcon.classList.remove('rotated');
+        currentIcon.textContent = 'add';
+    } else {
+        currentAnswer.classList.add('active');
+        currentIcon.classList.add('rotated');
+        currentIcon.textContent = 'close';
+    }
+};
+
 // Dynamic Year
-const yearEl = document.getElementById('current-year');
+const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
