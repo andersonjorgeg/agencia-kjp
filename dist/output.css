@@ -1359,6 +1359,12 @@ video {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1837,7 +1843,7 @@ html {
 /* --- Agência Marketing Utilities --- */
 
 .bg-fume {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55));
 }
 
 .bg-fume-light {
@@ -1849,28 +1855,31 @@ html {
   background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
 }
 
+/* ===== FAQ STYLES ===== */
+
 .faq-answer {
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+  padding: 0;
 }
 
-.faq-answer.open {
-  max-height: 300px;
-  padding-top: 0.75rem;
+.faq-answer.active {
+  max-height: 500px;
+  opacity: 1;
+  padding: 12px 0;
 }
 
 .faq-icon {
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0deg);
 }
 
-.faq-icon.open {
-  --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.faq-icon.rotated {
+  transform: rotate(90deg);
 }
 
 .card-start {
