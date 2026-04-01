@@ -14,35 +14,36 @@ window.addEventListener('load', () => {
     }, 300);
 });
 
-// Mobile Menu Toggle Logic with Smooth Transitions
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const mobileMenuClose = document.getElementById('mobile-menu-close');
-const mobileMenu = document.getElementById('mobile-menu');
+// Mobile Menu Toggle Logic
+const mobileMenuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.navbar-links');
+const menuIcon = mobileMenuToggle?.querySelector('.material-icons');
 
-const openMenu = () => {
-    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
-    mobileMenu.classList.add('opacity-100', 'translate-x-0');
-    document.body.style.overflow = 'hidden';
-};
-
-const closeMenu = () => {
-    mobileMenu.classList.remove('opacity-100', 'translate-x-0');
-    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
-    document.body.style.overflow = '';
+const toggleMenu = () => {
+    mobileMenu.classList.toggle('mobile-active');
+    
+    // Toggle menu icon and scrolling
+    if (mobileMenu.classList.contains('mobile-active')) {
+        if (menuIcon) menuIcon.textContent = 'close';
+        document.body.style.overflow = 'hidden';
+    } else {
+        if (menuIcon) menuIcon.textContent = 'menu';
+        document.body.style.overflow = '';
+    }
 };
 
 if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', openMenu);
-}
-
-if (mobileMenuClose && mobileMenu) {
-    mobileMenuClose.addEventListener('click', closeMenu);
+    mobileMenuToggle.addEventListener('click', toggleMenu);
 }
 
 // Close mobile menu on link click
-const mobileMenuLinks = mobileMenu?.querySelectorAll('a, button');
+const mobileMenuLinks = mobileMenu?.querySelectorAll('.nav-link, .nav-btn');
 mobileMenuLinks?.forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('mobile-active')) {
+            toggleMenu();
+        }
+    });
 });
 
 // ===== SMOOTH SCROLL PARA ÂNCORAS COM OFFSET DO HEADER =====
