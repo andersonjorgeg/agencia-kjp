@@ -33,7 +33,7 @@
                 <span class="brand-name">PRODUTORA <span class="accent-color">&amp;</span> AGÊNCIA</span>
             </div>
 
-            <button class="menu-toggle" aria-label="Abrir menu">
+            <button id="mobile-menu-toggle" class="menu-toggle" aria-label="Abrir menu">
                 <span class="material-icons">menu</span>
             </button>
 
@@ -45,6 +45,30 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-overlay opacity-0 pointer-events-none translate-x-full">
+        <div class="mobile-overlay-inner">
+            <div class="mobile-header">
+                <div class="navbar-brand">
+                    <div class="logo-box">
+                        <span class="logo-text">KJP</span>
+                    </div>
+                    <span class="brand-name">PRODUTORA <span class="accent-color">&amp;</span> AGÊNCIA</span>
+                </div>
+                <button id="mobile-menu-close" class="mobile-close" aria-label="Fechar menu">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            
+            <nav class="mobile-nav">
+                <a href="#inicio" class="mobile-link">Início</a>
+                <a href="#quem-somos" class="mobile-link">Sobre</a>
+                <a href="#time" class="mobile-link">Time</a>
+                <a href="#contato" class="mobile-btn">Contato</a>
+            </nav>
+        </div>
+    </div>
 
     <main>
         <!-- Hero Section -->

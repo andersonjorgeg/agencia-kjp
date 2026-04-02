@@ -234,6 +234,10 @@ ul {
     .menu-toggle {
         display: none;
     }
+
+    .mobile-overlay {
+        display: none !important;
+    }
 }
 
 /* Hero Split Section */
@@ -759,19 +763,74 @@ body.loaded .hero-pane .pane-content>* {
     transform: translateY(0);
 }
 
-/* Mobile Nav Overlay */
-.navbar-links.mobile-active {
-    display: flex;
-    flex-direction: column;
+/* Mobile Nav Overlay mimicking Tailwind classes used in script.js */
+.mobile-overlay {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 80%;
-    background: var(--bg-dark);
-    padding: 100px 40px;
-    z-index: 1001;
-    border-left: 1px solid var(--glass-border);
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(24px);
+    transition: all 0.5s ease-in-out;
+}
+
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+.pointer-events-none { pointer-events: none; }
+.translate-x-full { transform: translateX(100%); }
+.translate-x-0 { transform: translateX(0); }
+
+.mobile-overlay-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    height: 80px;
+}
+
+.mobile-close {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+}
+
+.mobile-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.mobile-link:hover {
+    color: var(--primary);
+}
+
+.mobile-btn {
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-top: 40px;
 }
 
 /* --- WhatsApp Floating Button (Premium Design) --- */

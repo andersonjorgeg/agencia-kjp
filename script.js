@@ -14,36 +14,35 @@ window.addEventListener('load', () => {
     }, 300);
 });
 
-// Mobile Menu Toggle Logic
-const mobileMenuToggle = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.navbar-links');
-const menuIcon = mobileMenuToggle?.querySelector('.material-icons');
+// Mobile Menu Toggle Logic with Smooth Transitions (Shared across pages)
+const mobileMenuToggleTw = document.getElementById('mobile-menu-toggle');
+const mobileMenuCloseTw = document.getElementById('mobile-menu-close');
+const mobileMenuTw = document.getElementById('mobile-menu');
 
-const toggleMenu = () => {
-    mobileMenu.classList.toggle('mobile-active');
-    
-    // Toggle menu icon and scrolling
-    if (mobileMenu.classList.contains('mobile-active')) {
-        if (menuIcon) menuIcon.textContent = 'close';
-        document.body.style.overflow = 'hidden';
-    } else {
-        if (menuIcon) menuIcon.textContent = 'menu';
-        document.body.style.overflow = '';
-    }
+const openMenuTw = () => {
+    mobileMenuTw.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+    mobileMenuTw.classList.add('opacity-100', 'translate-x-0');
+    document.body.style.overflow = 'hidden';
 };
 
-if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', toggleMenu);
+const closeMenuTw = () => {
+    mobileMenuTw.classList.remove('opacity-100', 'translate-x-0');
+    mobileMenuTw.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+    document.body.style.overflow = '';
+};
+
+if (mobileMenuToggleTw && mobileMenuTw) {
+    mobileMenuToggleTw.addEventListener('click', openMenuTw);
 }
 
-// Close mobile menu on link click
-const mobileMenuLinks = mobileMenu?.querySelectorAll('.nav-link, .nav-btn');
-mobileMenuLinks?.forEach(link => {
-    link.addEventListener('click', () => {
-        if (mobileMenu.classList.contains('mobile-active')) {
-            toggleMenu();
-        }
-    });
+if (mobileMenuCloseTw && mobileMenuTw) {
+    mobileMenuCloseTw.addEventListener('click', closeMenuTw);
+}
+
+// Close mobile menu on link click (Tailwind pages)
+const mobileMenuLinksTw = mobileMenuTw?.querySelectorAll('a, button');
+mobileMenuLinksTw?.forEach(link => {
+    link.addEventListener('click', closeMenuTw);
 });
 
 // ===== SMOOTH SCROLL PARA ÂNCORAS COM OFFSET DO HEADER =====
