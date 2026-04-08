@@ -761,6 +761,10 @@ video {
   min-height: 500px;
 }
 
+.min-h-\[600px\] {
+  min-height: 600px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1843,7 +1847,7 @@ html {
 /* --- Agência Marketing Utilities --- */
 
 .bg-fume {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55));
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
 }
 
 .bg-fume-light {
